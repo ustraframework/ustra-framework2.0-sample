@@ -1,0 +1,43 @@
+{
+  "compilerOptions": {
+    "rootDir": ".",
+    "allowSyntheticDefaultImports": true,
+    "forceConsistentCasingInFileNames": false,
+    "target": "es5",
+    "module": "commonjs",
+    "moduleResolution": "node",
+    "lib": ["esnext", "esnext.asynciterable", "dom"],
+    "esModuleInterop": true,
+    "allowJs": false,
+    "checkJs": false,
+    "sourceMap": false,
+    "inlineSourceMap": false,
+    "inlineSources": false,
+    "strict": false,
+    "noEmit": false,
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
+    "noImplicitAny": false /* Raise error on expressions and declarations with an implied 'any' type. */,
+    "strictNullChecks": false /* Enable strict null checks. */,
+    "resolveJsonModule": true,
+    "declarationMap": false,
+    "declaration": false,
+    "downlevelIteration": true,
+    "baseUrl": ".",
+    "paths": {
+      "~/*": ["./bo/client/*", "./mobile/client/*", "./web/client/*"],
+      "@/*": ["./bo/client/*", "./mobile/client/*", "./web/client/*"],
+      "@sayclub/*": ["./node_modules/@sayclub/*"]
+    },
+    "types": ["@types/node", "@types/jest", "@nuxt/types", "@ustra/nuxt", "@ustra/nuxt-mng-bo", "@sayclub/cmm", "@ustra/vuetify", "@sayclub/bo", "@sayclub/mobile", "@sayclub/web"]
+  },
+  "exclude": ["node_modules", ".nuxt", "dist", "src/**/*.test.ts", "**/src/static/**/*", "**/*.js"],
+  "typedocOptions": {
+    "mode": "modules",
+    "out": "docs",
+    "exclude": "**/*+(.test).ts,**/test/**",
+    "excludeExternals": true,
+    "includeVersion": true,
+    "hideGenerator": true
+  }
+}

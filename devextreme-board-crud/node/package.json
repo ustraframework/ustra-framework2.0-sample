@@ -1,0 +1,83 @@
+{
+  "private": true,
+  "workspaces": [
+    "./cmm",
+    "./bo",
+    "./mobile",
+    "./web"
+  ],
+  "engines": {
+    "npm": "^6.14.4",
+    "node": "^12.22.0",
+    "yarn": "^1.22.4"
+  },
+  "browserslist": [
+    "last 2 version",
+    "android >= 4.4",
+    "IE >= 11"
+  ],
+  "scripts": {
+    "dev:bo": "cd ./bo && yarn run dev",
+    "generate:bo": "cd ./bo && yarn run generate",
+    "dev:mobile": "cd ./mobile && yarn run dev",
+    "build:dev:mobile": "cd ./mobile && yarn run build:dev",
+    "start:dev:mobile": "cd ./mobile && yarn run start:dev",
+    "dev:web": "cd ./web && yarn run dev",
+    "build:dev:web": "cd ./web && yarn run build:dev",
+    "start:dev:web": "cd ./web && yarn run start:dev",
+    "create-off-pack": "rm -rf node_modules && rm yarn.lock && rm -rf npm_packages/* && yarn cache clean && yarn install"
+  },
+  "dependencies": {
+    "@ustra/core": "2.0.45-snapshot.5",
+    "@ustra/data": "2.0.45-snapshot.5",
+    "@ustra/nuxt": "2.0.45-snapshot.5",
+    "@ustra/nuxt-vuetify": "2.0.45-snapshot.5",
+    "@ustra/nuxt-dx": "2.0.45-snapshot.5",
+    "@ustra/nuxt-dx-mng-bo": "2.0.45-snapshot.5",
+    "@ustra/nuxt-mng": "2.0.45-snapshot.5",
+    "@ustra/nuxt-mng-bo": "2.0.45-snapshot.5"
+  },
+  "devDependencies": {
+    "@babel/eslint-parser": "7.16.3",
+    "@babel/node": "7.13.13",
+    "@babel/preset-env": "7.13.12",
+    "@babel/runtime-corejs3": "7.13.10",
+    "@nuxt/types": "2.15.8",
+    "@nuxt/typescript-build": "2.1.0",
+    "@nuxtjs/eslint-config": "3.1.0",
+    "@nuxtjs/eslint-config-typescript": "8.0.0",
+    "@nuxtjs/eslint-module": "3.0.2",
+    "@types/cli-progress": "3.9.1",
+    "@types/crypto-js": "4.0.1",
+    "@types/jest": "26.0.22",
+    "@types/jquery": "3.5.5",
+    "@types/lodash": "4.14.168",
+    "@types/node": "14.14.41",
+    "@types/shelljs": "0.8.8",
+    "@types/sockjs-client": "1.5.0",
+    "@vue/test-utils": "1.1.4",
+    "@vuese/cli": "2.14.3",
+    "babel-core": "7.0.0-bridge.0",
+    "babel-jest": "27.4.4",
+    "core-js": "3",
+    "cpx": "1.5.0",
+    "cross-env": "5.2.0",
+    "cross-spawn": "7.0.3",
+    "eslint": "8.4.1",
+    "eslint-config-prettier": "8.3.0",
+    "eslint-plugin-nuxt": "3.1.0",
+    "eslint-plugin-prettier": "3.4.0",
+    "eslint-plugin-vue": "8.2.0",
+    "jest": "27.4.4",
+    "markdown-loader": "6.0.0",
+    "prettier": "2.5.1",
+    "sass": "1.32.12",
+    "sass-loader": "10.1.1",
+    "shelljs": "0.8.4",
+    "ts-jest": "27.1.1",
+    "ts-loader": "6.2.2",
+    "ts-node": "8.10.2",
+    "vue-jest": "3.0.4",
+    "webpack": "4.46.0"
+  }
+}
