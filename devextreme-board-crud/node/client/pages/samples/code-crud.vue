@@ -29,7 +29,7 @@
 </template>
 <script lang="ts">
 import { Component, Ref } from 'vue-property-decorator'
-import { SayclubBoComponent } from '~/components/sayclub-bo-component'
+import { UstraDxBoComponent } from '@ustra/nuxt-dx-mng-bo/src/components/ustra-dx-bo-component'
 import MasterGrid from '~/components/sample-menu/code-crud/master-grid.vue'
 import SubGrid from '~/components/sample-menu/code-crud/sub-grid.vue'
 import InputForm from '~/components/sample-menu/code-crud/input-form.vue'
@@ -38,7 +38,7 @@ import { SampleCrudModel } from '~/services/sample-crud-service'
 @Component({
   components: { MasterGrid, SubGrid, InputForm },
 })
-export default class extends SayclubBoComponent {
+export default class extends UstraDxBoComponent {
   // #region variables
   @Ref() readonly masterGrid: MasterGrid
   @Ref() readonly subGrid: SubGrid

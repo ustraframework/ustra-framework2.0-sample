@@ -3,12 +3,12 @@
 </template>
 <script lang="ts">
 import { Vue, Component, Prop, Model, Ref, Watch, Inject, InjectReactive, Provide, ProvideReactive, PropSync, Emit } from 'vue-property-decorator'
-import { SayclubBoComponent } from '~/components/sayclub-bo-component'
+import { UstraDxBoComponent } from '@ustra/nuxt-dx-mng-bo/src/components/ustra-dx-bo-component'
 
 @Component({
   layout: 'default',
 })
-export default class extends SayclubBoComponent {
+export default class extends UstraDxBoComponent {
   // #region variables
   // #endregion
   // #region hooks

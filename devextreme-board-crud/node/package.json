@@ -1,11 +1,10 @@
 {
+  "name": "@ustra/sample-devextreme-board-crud",
+  "version": "1.0.0",
+  "description": "U.STRA Node Framework Sample - BO",
+  "types": "types/index.d.ts",
+  "license": "MIT",
   "private": true,
-  "workspaces": [
-    "./cmm",
-    "./bo",
-    "./mobile",
-    "./web"
-  ],
   "engines": {
     "npm": "^6.14.4",
     "node": "^12.22.0",
@@ -17,14 +16,9 @@
     "IE >= 11"
   ],
   "scripts": {
-    "dev:bo": "cd ./bo && yarn run dev",
-    "generate:bo": "cd ./bo && yarn run generate",
-    "dev:mobile": "cd ./mobile && yarn run dev",
-    "build:dev:mobile": "cd ./mobile && yarn run build:dev",
-    "start:dev:mobile": "cd ./mobile && yarn run start:dev",
-    "dev:web": "cd ./web && yarn run dev",
-    "build:dev:web": "cd ./web && yarn run build:dev",
-    "start:dev:web": "cd ./web && yarn run start:dev",
+    "dev": "cross-env NODE_ENV=development CONFIG_ENV=local nuxt",
+    "generate": "cross-env NODE_ENV=production CONFIG_ENV=dev nuxt generate",
+    "test": "jest --detectOpenHandles --forceExit",
     "create-off-pack": "rm -rf node_modules && rm yarn.lock && rm -rf npm_packages/* && yarn cache clean && yarn install"
   },
   "dependencies": {

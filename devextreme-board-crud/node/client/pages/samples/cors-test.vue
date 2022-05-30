@@ -6,7 +6,7 @@
 <script lang="ts">
 import { HttpMethod } from '@ustra/core/src/server/http/const'
 import { Component } from 'vue-property-decorator'
-import { SayclubBoComponent } from '~/components/sayclub-bo-component'
+import { UstraDxBoComponent } from '@ustra/nuxt-dx-mng-bo/src/components/ustra-dx-bo-component'
 
 @Component({
   config: {
@@ -15,7 +15,7 @@ import { SayclubBoComponent } from '~/components/sayclub-bo-component'
     },
   },
 })
-export default class extends SayclubBoComponent {
+export default class extends UstraDxBoComponent {
   // #region variables
   // #endregion
 

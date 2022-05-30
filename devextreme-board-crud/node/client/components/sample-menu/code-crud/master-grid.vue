@@ -47,7 +47,7 @@
 <script lang="ts">
 import { Component, Ref, Emit } from 'vue-property-decorator'
 import { DxDataGrid } from '@ustra/nuxt-dx/src/components'
-import { SayclubBoComponent } from '~/components/sayclub-bo-component'
+import { UstraDxBoComponent } from '@ustra/nuxt-dx-mng-bo/src/components/ustra-dx-bo-component'
 import InputForm from './input-form.vue'
 import { SampleCrudModel, sampleCrudService } from '~/services/sample-crud-service'
 
@@ -59,7 +59,7 @@ import { SampleCrudModel, sampleCrudService } from '~/services/sample-crud-servi
  * @group component group
  * component description
  */
-export default class extends SayclubBoComponent {
+export default class extends UstraDxBoComponent {
   // #region variables
 
   codes: SampleCrudModel[] = []

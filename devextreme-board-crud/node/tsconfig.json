@@ -25,11 +25,10 @@
     "downlevelIteration": true,
     "baseUrl": ".",
     "paths": {
-      "~/*": ["./bo/client/*", "./mobile/client/*", "./web/client/*"],
-      "@/*": ["./bo/client/*", "./mobile/client/*", "./web/client/*"],
-      "@sayclub/*": ["./node_modules/@sayclub/*"]
+      "~/*": ["./client/*"],
+      "@/*": ["./client/*"]
     },
-    "types": ["@types/node", "@types/jest", "@nuxt/types", "@ustra/nuxt", "@ustra/nuxt-mng-bo", "@sayclub/cmm", "@ustra/vuetify", "@sayclub/bo", "@sayclub/mobile", "@sayclub/web"]
+    "types": ["@types/node", "@types/jest", "@nuxt/types", "@ustra/nuxt", "@ustra/nuxt-mng-bo", "./"]
   },
   "exclude": ["node_modules", ".nuxt", "dist", "src/**/*.test.ts", "**/src/static/**/*", "**/*.js"],
   "typedocOptions": {

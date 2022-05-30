@@ -44,7 +44,7 @@
 </template>
 <script lang="ts">
 import { Component, Ref, Emit } from 'vue-property-decorator'
-import { SayclubBoComponent } from '~/components/sayclub-bo-component'
+import { UstraDxBoComponent } from '@ustra/nuxt-dx-mng-bo/src/components/ustra-dx-bo-component'
 import { Validatable } from '@ustra/nuxt-dx/src/components/dx/dx-validation-group'
 import { DxTextBox } from '@ustra/nuxt-dx/src/components/dx/dx-text-box'
 import { CodeInfo } from '@ustra/nuxt-mng/src/system/models/ustra-code-model'
@@ -62,7 +62,7 @@ type InputType = 'groupCode' | 'detailCode'
  * @group component group
  * component description
  */
-export default class extends SayclubBoComponent {
+export default class extends UstraDxBoComponent {
   // #region variables
   inputData: SampleCrudModel = null
   inputMode: FormMode = null
