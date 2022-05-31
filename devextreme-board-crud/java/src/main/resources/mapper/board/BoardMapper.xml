@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="io.ustra.framework2.sample.board.BoardMapper">
+
+	<select id="select" resultType="io.ustra.framework2.sample.board.BoardModel">
+		SELECT POST_ID,
+			   TITLE,
+			   AUT_NM,
+			   CATEGORY_CD
+		  FROM USTRA_SAMPLE_BOARD
+		 WHERE DEL_YN = 'N'
+		 <if test="args1.keyword != null and args1.keyword != ''">
+		   AND (
+		   		TITLE LIKE '%' + #{args1.keyword} + '%'
+		   		OR
+		   		CONTENT LIKE '%' + #{args1.keyword} + '%'
+		   )
+		 </if>
+	</select>
+
+	<select id="selectDetail" resultType="io.ustra.framework2.sample.board.BoardModel">
+		SELECT POST_ID,
+			   TITLE,
+			   CONTENT,
+			   AUT_NM,
+			   CATEGORY_CD
+		  FROM USTRA_SAMPLE_BOARD
+		 WHERE POST_ID = #{postId}
+	</select>
+
+	<insert id="insert">
+		<selectKey resultType="int" keyProperty="postId" order="AFTER">
+			SELECT SCOPE_IDENTITY()
+		</selectKey>
+		INSERT INTO USTRA_SAMPLE_BOARD (
+			AUT_NM,
+			TITLE,
+			CONT,
+			POST_DV_CD,
+			FILE_ID,
+			REG_DTTM,
+			REG_USR_ID,
+			REG_USR_IP,
+			UPD_DTTM,
+			UPD_USR_ID,
+			UPD_USR_IP
+		) VALUES (
+			#{autNm},
+			#{title},
+			#{cont},
+			#{postDvCd},
+			#{fileId},
+			CURRENT_TIMESTAMP,
+			#{regUsrId},
+			#{regUsrIp},
+			CURRENT_TIMESTAMP,
+			#{updUsrId},
+			#{updUsrIp}
+		)
+	</insert>
+
+	<update id="update">
+		UPDATE USTRA_SAMPLE_BOARD SET
+			   AUT_NM = #{autNm},
+			   TITLE = #{title},
+			   CONT = #{cont},
+			   POST_DV_CD = #{postDvCd},
+			   UPD_DTTM = CURRENT_TIMESTAMP,
+			   UPD_USR_ID = #{updUsrId},
+			   UPD_USR_IP = #{updUsrIp}
+		 WHERE POST_ID = #{postId}
+	</update>
+
+	<update id="delete">
+		UPDATE USTRA_SAMPLE_BOARD SET
+		 WHERE POST_ID = #{postId}
+	</update>
+</mapper>
