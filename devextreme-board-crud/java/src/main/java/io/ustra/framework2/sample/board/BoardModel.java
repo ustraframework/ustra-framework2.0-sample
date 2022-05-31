@@ -65,7 +65,6 @@ public class BoardModel extends UstraManagementBaseModel {
 	/**
 	 * 파일 아이디
 	 */
-	@NotEmpty(message = "파일 아이디는 필수 입력입니다.", groups= { CrudGroups.Add.class, CrudGroups.Edit.class })
 	private String fileId;
 
 	/**

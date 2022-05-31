@@ -6,7 +6,7 @@
       </u-field>
 
       <dx-button text="검색" icon="search" type="success" class="right" />
-      <dx-button text="신규" icon="plus" type="default" />
+      <dx-button text="신규" icon="plus" type="default" @click="e => $emit('click-new-button')" />
     </u-button-bar>
   </div>
 </template>

@@ -34,6 +34,7 @@ ustra:
           password: ENC(QVezyfgonhJprL0mPoLbjMl1Hp83S3y4)
     file:
       enabled: true
+      crypto:        enabled: true
   mvc:
     view:
       api-prefix: api

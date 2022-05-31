@@ -23,7 +23,6 @@
     "files.associations": {
       "*.json": "jsonc"
     },
-    "editor.fontFamily": "나눔고딕코딩, Consolas, 'Courier New', monospace",
     "git.autofetch": true,
     "editor.formatOnPaste": true,
     "editor.formatOnType": true,
