@@ -1,3 +1,4 @@
+import path from 'path'
 import { configProperties, env } from '@ustra/core'
 import NuxtConfigLoader from '@ustra/nuxt/src/config/nuxt-config-loader'
 import NuxtAppProperties from '@ustra/nuxt/src/config/nuxt-app-properties'
@@ -9,14 +10,14 @@ export default async () => {
       profile: process.env.CONFIG_ENV,
       configDir: 'config',
       deviceType: configProperties.DeviceType.MOBILE,
-      title: 'SayClub Renewal - BO',
+      title: 'U.STRA Framework Sample - BO',
       auth: {
         enabled: true,
         loginUrl: '/',
         jwt: {
           useCookie: false,
-          accessTokenKey: 'X-SAY-BO-TOKEN',
-          refreshTokenKey: 'X-SAY-BO-REF-TOKEN',
+          accessTokenKey: 'X-BO-TOKEN',
+          refreshTokenKey: 'X-BO-REF-TOKEN',
         },
       },
     },
@@ -37,7 +38,7 @@ export default async () => {
         useUstraDx: {},
         useUstraMngBo: {
           uiConfig: {
-            appTitle: 'SayClub Renewal - BO',
+            appTitle: 'U.STRA Framework Sample - BO',
             useMaskingForList: true,
             tabMenu: {
               enabled: false,
@@ -52,19 +53,18 @@ export default async () => {
         extends: [],
       },
       head: {
-        titleTemplate: 'SayClub Renewal - BO',
+        titleTemplate: 'U.STRA Framework Sample - BO',
         title: '',
       },
       generation: {
-        generateDirPath: '../../../back/root/bo/src/main/resources/static',
+        generateDirPath: path.resolve(__dirname, '../java/src/main/resources/static'),
         generateProfiles: [env.Profile.DEV, env.Profile.STAGING, env.Profile.PRODUCTION],
       },
     },
   }
 
   return await NuxtConfigLoader.nuxtConfig(config, (_prop, _config) => {
-    _config.env.SERVER_PROP_ENC_KEY = 'ajR3Z2swbDd0MHQwYWIwMQ=='
-    _config.build.transpile.push('@sayclub/cmm')
+    _config.env.SERVER_PROP_ENC_KEY = 'MTM0eHJhM2Z2aTM5ZTgzNQ=='
     _config.build.extractCSS = false
   })
 }

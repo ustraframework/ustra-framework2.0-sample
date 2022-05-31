@@ -25,6 +25,7 @@ public class BoardModel extends UstraManagementBaseModel {
 	 * 게시 아이디
 	 */
 	@Positive(message = "게시 아이디는 필수 입력입니다.", groups=CrudGroups.Edit.class)
+	@NotNull(message = "게시 아이디는 필수 입력입니다.", groups=CrudGroups.Edit.class)
 	private Integer postId;
 
 	/**

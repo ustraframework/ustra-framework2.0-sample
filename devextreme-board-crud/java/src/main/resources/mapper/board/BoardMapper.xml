@@ -8,14 +8,16 @@
 		SELECT POST_ID,
 			   TITLE,
 			   AUT_NM,
-			   CATEGORY_CD
+			   POST_DV_CD,
+			   INQ_NUM,
+			   REG_DTTM
 		  FROM USTRA_SAMPLE_BOARD
 		 WHERE DEL_YN = 'N'
-		 <if test="args1.keyword != null and args1.keyword != ''">
+		 <if test="arg1.keyword != null and arg1.keyword != ''">
 		   AND (
-		   		TITLE LIKE '%' + #{args1.keyword} + '%'
+		   		TITLE LIKE '%' + #{arg1.keyword} + '%'
 		   		OR
-		   		CONTENT LIKE '%' + #{args1.keyword} + '%'
+		   		CONTENT LIKE '%' + #{arg1.keyword} + '%'
 		   )
 		 </if>
 	</select>
@@ -23,9 +25,11 @@
 	<select id="selectDetail" resultType="io.ustra.framework2.sample.board.BoardModel">
 		SELECT POST_ID,
 			   TITLE,
-			   CONTENT,
+			   CONT,
 			   AUT_NM,
-			   CATEGORY_CD
+			   POST_DV_CD,
+			   INQ_NUM,
+			   REG_DTTM
 		  FROM USTRA_SAMPLE_BOARD
 		 WHERE POST_ID = #{postId}
 	</select>
@@ -75,6 +79,7 @@
 
 	<update id="delete">
 		UPDATE USTRA_SAMPLE_BOARD SET
+			  DEL_YN = 'Y'
 		 WHERE POST_ID = #{postId}
 	</update>
 </mapper>

@@ -1,7 +1,9 @@
 <template>
   <div>
     <u-button-bar>
-      <u-field label="제목" :width="200" :full-width="true" />
+      <u-field label="제목/내용" :label-width="80" :width="150" :full-width="true">
+        <dx-text-box />
+      </u-field>
 
       <dx-button text="검색" icon="search" type="success" class="right" />
       <dx-button text="신규" icon="plus" type="default" />
