@@ -44,7 +44,7 @@
         <template #default>
           <u-button-bar position="bottom">
             <dx-button text="저장" icon="floppy" type="default" class="right" @click="save" />
-            <dx-button v-if="!isNewForm" text="삭제" icon="trash" />
+            <dx-button v-if="!isNewForm" text="삭제" icon="trash" @click="remove" />
           </u-button-bar>
         </template>
       </dx-item>
@@ -70,7 +70,7 @@ export default class extends UstraBoComponent {
 
   inputData: Board = {}
   isNewForm: boolean = true
-  uploadFileInfo: any = null
+  uploadFileInfo: any = {}
 
   // #endregion
   // #region hooks
@@ -86,12 +86,13 @@ export default class extends UstraBoComponent {
       postDvCd: this.getCmnCodes('POST_DV_CD').length > 0 ? this.getCmnCodes('POST_DV_CD')[0].dtlCd : null,
       fileId: null,
     }
+    this.uploadFileInfo = {}
   }
 
   @OnError({
     message: '상세 정보 조회 중 오류가 발생하였습니다.',
     onError: function () {
-      this.$data.isVisiable = false
+      this.$emit('update:visible', false)
     },
   })
   async loadDetail() {
@@ -99,6 +100,12 @@ export default class extends UstraBoComponent {
 
     if (!boardInfo) {
       throw new Error()
+    }
+
+    this.inputData = boardInfo
+    this.isNewForm = false
+    this.uploadFileInfo = {
+      fileId: boardInfo.fileId,
     }
   }
 
@@ -124,6 +131,13 @@ export default class extends UstraBoComponent {
     this.$emit('updated')
   }
 
+  @OnError({ message: '삭제 중 오류가 발생하였습니다.' })
+  async remove() {
+    if (await confirm('삭제하시겠습니까?')) {
+      await boardService.remove(this.board.postId)
+      this.$emit('updated')
+    }
+  }
   // #endregion
   // #region watches
   @Watch('board', { immediate: true })

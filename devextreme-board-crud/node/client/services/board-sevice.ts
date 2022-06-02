@@ -12,6 +12,16 @@ export interface Criteria {
    * 키워드
    */
   keyword?: string
+
+  /**
+   * 검색 시작일
+   */
+  srtDt?: Date
+
+  /**
+   * 검색 종료일
+   */
+  endDt?: Date
 }
 
 /**
@@ -58,9 +68,11 @@ export class SampleCrudService extends UstraService {
   /**
    * 게시 목록 조회
    * @param keyword 조회 키워드
+   * @param srtDate 조회 시작일
+   * @param endDate 조회 종료일
    * @returns 게시 목록
    */
-  async getBoards(pagination: PaginationRequest, keyword?: string) {
+  async getBoards(pagination: PaginationRequest, keyword?: string, srtDate?: Date, endDate?: Date) {
     return (
       await this.$ustra.api.call<ApiResponse<Board[]>>({
         url: '/api/sample/board',
@@ -70,6 +82,8 @@ export class SampleCrudService extends UstraService {
         },
         params: {
           keyword,
+          srtDate,
+          endDate,
         },
       })
     )?.data

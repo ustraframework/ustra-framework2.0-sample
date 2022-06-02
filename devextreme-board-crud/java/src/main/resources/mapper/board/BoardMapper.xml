@@ -29,6 +29,7 @@
 			   AUT_NM,
 			   POST_DV_CD,
 			   INQ_NUM,
+			   FILE_ID,
 			   REG_DTTM
 		  FROM USTRA_SAMPLE_BOARD
 		 WHERE POST_ID = #{postId}

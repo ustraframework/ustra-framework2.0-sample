@@ -2,7 +2,7 @@
   <dx-box direction="col" height="100%" width="100%">
     <dx-item :ratio="0" base-size="auto">
       <template #default>
-        <search @click-new-button="$refs.list.initForm()" />
+        <search @click-new-button="$refs.list.initForm()" @click-search-button="$refs.list.search($event)" />
       </template>
     </dx-item>
     <dx-item :ratio="1">

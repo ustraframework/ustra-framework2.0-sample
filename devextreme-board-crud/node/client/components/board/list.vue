@@ -30,7 +30,12 @@
     <form-popup
       :visible.sync="visiblePopup"
       :board="selectedBoard"
-      @hidden="() => $refs.grid.instance.clearSelection()"
+      @hidden="
+        () => {
+          $refs.grid.instance.clearSelection()
+          this.selectedBoard = null
+        }
+      "
       @updated="
         () => {
           this.gridDataSource.reload()
@@ -47,7 +52,7 @@ import CustomStore from 'devextreme/data/custom_store'
 import DataSource from 'devextreme/data/data_source'
 import { createPagingParameter } from '@ustra/nuxt-dx/src/utils/pagination-utils'
 import { DxDataGrid } from '@ustra/nuxt-dx/src/components'
-import { boardService, Board } from '~/services/board-sevice'
+import { boardService, Board, Criteria } from '~/services/board-sevice'
 import FormPopup from '~/components/board/form-popup.vue'
 
 @Component({
@@ -58,6 +63,7 @@ export default class extends UstraBoComponent {
   gridDataSource: DataSource = null
   selectedBoard: Board = null
   visiblePopup: boolean = false
+  criteria: Criteria = {}
 
   @Ref() readonly grid: DxDataGrid
 
@@ -69,7 +75,7 @@ export default class extends UstraBoComponent {
         key: ['postId'],
         load: async loadOptions => {
           const paginationRequest = createPagingParameter(loadOptions)
-          const result = await boardService.getBoards(paginationRequest.header, null)
+          const result = await boardService.getBoards(paginationRequest.header, this.criteria?.keyword, this.criteria?.srtDt, this.criteria?.endDt)
 
           return {
             data: result.body,
@@ -87,6 +93,11 @@ export default class extends UstraBoComponent {
 
     // clear selection
     this.$ustra.utils.core.getObjectAsync(() => this.grid.instance).then(ins => ins.clearSelection())
+  }
+
+  search(criteria) {
+    this.criteria = criteria
+    this.gridDataSource.reload()
   }
   // #endregion
   // #region watches

@@ -1,5 +1,7 @@
 package io.ustra.framework2.sample.board;
 
+import java.time.LocalDateTime;
+
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Positive;
@@ -81,5 +83,15 @@ public class BoardModel extends UstraManagementBaseModel {
 		 * 검색 키워드
 		 */
 		private String keyword;
+
+		/**
+		 * 검색 시작일
+		 */
+		private LocalDateTime srtDate;
+
+		/**
+		 * 검색 종료일
+		 */
+		private LocalDateTime endDate;
 	}
 }

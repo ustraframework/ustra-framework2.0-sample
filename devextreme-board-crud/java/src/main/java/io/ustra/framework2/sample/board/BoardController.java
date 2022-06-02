@@ -1,8 +1,10 @@
 package io.ustra.framework2.sample.board;
 
+import java.time.LocalDateTime;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -10,6 +12,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.gsitm.ustra.java.mvc.rest.utils.UstraRestUtils;
@@ -25,11 +28,16 @@ public class BoardController {
 
 	@GetMapping("")
 	@Permission
-	List<BoardModel> getBoards(String keyword) {
+	List<BoardModel> getBoards(
+			@RequestParam(required = false) String keyword,
+			@RequestParam(required = false) @DateTimeFormat(iso = DateTimeFormat.ISO.DATE_TIME) LocalDateTime srtDate,
+			@RequestParam(required = false) @DateTimeFormat(iso = DateTimeFormat.ISO.DATE_TIME) LocalDateTime endDate) {
 		return boardService.getBoards(UstraRestUtils.getCurrentApiHeader(),
 				BoardModel.Criteria
 					.builder()
 					.keyword(keyword)
+					.srtDate(srtDate)
+					.endDate(endDate)
 					.build()
 				);
 	}
