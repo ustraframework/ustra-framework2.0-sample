@@ -5,7 +5,7 @@
         <dx-text-box v-model="criteria.keyword" />
       </u-field>
 
-      <u-field label="기간" :width="400" :full-width="true">
+      <u-field label="기간" :label-width="60" :width="250" :full-width="true">
         <dx-date-period-box v-model="searchDttm" width="100%" mode="date" />
       </u-field>
 

@@ -9,9 +9,9 @@ import com.gsitm.ustra.java.data.domains.PaginationRequest;
 @Mapper
 public interface BoardMapper {
 
-	List<BoardModel> select(PaginationRequest paginationRequest, BoardModel.Criteria criteria);
-	BoardModel selectDetail(Integer postId);
-	int insert(BoardModel board);
-	int update(BoardModel board);
+	List<BoardDto> select(PaginationRequest paginationRequest, BoardDto.Criteria criteria);
+	BoardDto selectDetail(Integer postId);
+	int insert(BoardDto board);
+	int update(BoardDto board);
 	int delete(Integer postId);
 }

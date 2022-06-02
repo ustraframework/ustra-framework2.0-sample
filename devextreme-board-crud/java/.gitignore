@@ -42,3 +42,4 @@ out/
 
 ### root jar ###
 /*.jar
+/src/main/resources/static/**

@@ -18,10 +18,10 @@
           <template #menu>
             <side-menu :compact-mode="!menuOpened" :navigation="navigation" @click="handleSideBarClick"></side-menu>
           </template>
-          <div v-if="!isSamplePage && !useTabMenu" class="app-title">
-            <div>
+          <div v-show="!isSamplePage && !useTabMenu" class="app-title">
+            <!-- <div>
               <i class="mi mi-laptop-mac"></i>
-            </div>
+            </div> -->
             <div class="app-name">
               <span>{{ appTitle }}</span>
               <menu-favorite v-if="useFavorite" />
@@ -177,7 +177,7 @@ export default class extends UstraBoComponent {
   }
 
   created() {
-    this.isSamplePage = startsWith(this.$route.path, '/sample')
+    this.isSamplePage = startsWith(this.$route.path, '/sample/')
   }
 
   beforeMount() {

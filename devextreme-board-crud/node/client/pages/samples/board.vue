@@ -32,4 +32,3 @@ export default class extends UstraBoComponent {
   // #endregion
 }
 </script>
-<style lang="scss"></style>

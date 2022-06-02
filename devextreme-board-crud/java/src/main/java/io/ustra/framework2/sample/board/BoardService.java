@@ -28,7 +28,7 @@ public class BoardService {
 	 * @param criteria 검색 조건
 	 * @return 게시 목록
 	 */
-	public List<BoardModel> getBoards(PaginationRequest paginationRequest, BoardModel.Criteria criteria) {
+	public List<BoardDto> getBoards(PaginationRequest paginationRequest, BoardDto.Criteria criteria) {
 		return sampleBoardMapper.select(paginationRequest, criteria);
 	}
 
@@ -37,7 +37,7 @@ public class BoardService {
 	 * @param postId 게시 아이디
 	 * @return 게시 상세 정보
 	 */
-	public BoardModel get(Integer postId) {
+	public BoardDto get(Integer postId) {
 		return sampleBoardMapper.selectDetail(postId);
 	}
 
@@ -46,7 +46,7 @@ public class BoardService {
 	 * @param board 게시 정보
 	 * @return 등록 정보
 	 */
-	public BoardModel add(@ConvertGroup(to=CrudGroups.Add.class) @Valid BoardModel board) {
+	public BoardDto add(@ConvertGroup(to=CrudGroups.Add.class) @Valid BoardDto board) {
 		int result = sampleBoardMapper.insert(board);
 
 		if (result < 1) {
@@ -61,7 +61,7 @@ public class BoardService {
 	 * @param board 게시 정보
 	 * @return 수정 정보
 	 */
-	public BoardModel edit(@ConvertGroup(to=CrudGroups.Edit.class) @Valid BoardModel board) {
+	public BoardDto edit(@ConvertGroup(to=CrudGroups.Edit.class) @Valid BoardDto board) {
 		int result = sampleBoardMapper.update(board);
 
 		if (result < 1) {

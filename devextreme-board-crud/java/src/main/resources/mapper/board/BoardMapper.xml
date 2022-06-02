@@ -4,7 +4,7 @@
 
 <mapper namespace="io.ustra.framework2.sample.board.BoardMapper">
 
-	<select id="select" resultType="io.ustra.framework2.sample.board.BoardModel">
+	<select id="select" resultType="io.ustra.framework2.sample.board.BoardDto">
 		SELECT POST_ID,
 			   TITLE,
 			   AUT_NM,
@@ -20,9 +20,15 @@
 		   		CONTENT LIKE '%' + #{arg1.keyword} + '%'
 		   )
 		 </if>
+		 <if test="arg1.srtDate != null">
+		   AND REG_DTTM &gt; #{arg1.srtDate}
+		 </if>
+		 <if test="arg1.endDate != null">
+		   AND REG_DTTM &lt; #{arg1.endDate}
+		 </if>
 	</select>
 
-	<select id="selectDetail" resultType="io.ustra.framework2.sample.board.BoardModel">
+	<select id="selectDetail" resultType="io.ustra.framework2.sample.board.BoardDto">
 		SELECT POST_ID,
 			   TITLE,
 			   CONT,

@@ -28,12 +28,12 @@ public class BoardController {
 
 	@GetMapping("")
 	@Permission
-	List<BoardModel> getBoards(
+	List<BoardDto> getBoards(
 			@RequestParam(required = false) String keyword,
 			@RequestParam(required = false) @DateTimeFormat(iso = DateTimeFormat.ISO.DATE_TIME) LocalDateTime srtDate,
 			@RequestParam(required = false) @DateTimeFormat(iso = DateTimeFormat.ISO.DATE_TIME) LocalDateTime endDate) {
 		return boardService.getBoards(UstraRestUtils.getCurrentApiHeader(),
-				BoardModel.Criteria
+				BoardDto.Criteria
 					.builder()
 					.keyword(keyword)
 					.srtDate(srtDate)
@@ -44,19 +44,19 @@ public class BoardController {
 
 	@GetMapping("/{postId}")
 	@Permission
-	BoardModel getBoard(@PathVariable Integer postId) {
+	BoardDto getBoard(@PathVariable Integer postId) {
 		return boardService.get(postId);
 	}
 
 	@PostMapping("")
 	@Permission(roles = { ProgramIds.SAMPLE_BOARD })
-	BoardModel add(@RequestBody BoardModel board) {
+	BoardDto add(@RequestBody BoardDto board) {
 		return boardService.add(board);
 	}
 
 	@PutMapping("")
 	@Permission(roles = { ProgramIds.SAMPLE_BOARD })
-	BoardModel edit(@RequestBody BoardModel board) {
+	BoardDto edit(@RequestBody BoardDto board) {
 		return boardService.edit(board);
 	}
 
