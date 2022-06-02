@@ -88,6 +88,20 @@ export default class extends UstraBoComponent {
     }
   }
 
+  @OnError({
+    message: '상세 정보 조회 중 오류가 발생하였습니다.',
+    onError: function () {
+      this.$data.isVisiable = false
+    },
+  })
+  async loadDetail() {
+    const boardInfo = await boardService.get(this.board.postId)
+
+    if (!boardInfo) {
+      throw new Error()
+    }
+  }
+
   @OnError({ message: '저장 중 오류가 발생하였습니다.' })
   async save() {
     const result = await this.fieldSet.validate(true)
@@ -101,7 +115,11 @@ export default class extends UstraBoComponent {
 
     this.inputData.fileId = this.uploadFileInfo?.fileId
 
-    await boardService.add(this.inputData)
+    if (this.isNewForm) {
+      await boardService.add(this.inputData)
+    } else {
+      await boardService.edit(this.inputData)
+    }
     this.init()
     this.$emit('updated')
   }
@@ -112,6 +130,8 @@ export default class extends UstraBoComponent {
   boardChanged(v: Board) {
     if (!v) {
       this.init()
+    } else {
+      this.loadDetail()
     }
   }
   // #endregion

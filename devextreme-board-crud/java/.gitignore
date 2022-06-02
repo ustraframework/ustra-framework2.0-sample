@@ -39,3 +39,6 @@ out/
 
 ### Maven ###
 **/target/**
+
+### root jar ###
+/*.jar
