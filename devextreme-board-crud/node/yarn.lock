@@ -2773,10 +2773,10 @@
     "@typescript-eslint/types" "5.21.0"
     eslint-visitor-keys "^3.0.0"
 
-"@ustra/core@2.0.45-snapshot.6", "@ustra/core@^2.0.45-snapshot.6":
-  version "2.0.45-snapshot.6"
-  resolved "https://repo.gsitm.com/repository/npm-private/@ustra/core/-/core-2.0.45-snapshot.6.tgz#352ab83859883796f2cafa5f7a6a5a7eee4d3f45"
-  integrity sha512-hayLgamz9UPmhFSSOqaPsWHlC4G7jDApmtSbD2/gspzwkGZqQ99GZ1nRpqzWiYgxbS11q7OTjlDBtCmpkD7yeQ==
+"@ustra/core@2.0.45-snapshot.7", "@ustra/core@^2.0.45-snapshot.7":
+  version "2.0.45-snapshot.7"
+  resolved "https://repo.gsitm.com/repository/npm-private/@ustra/core/-/core-2.0.45-snapshot.7.tgz#a782908e1d93bfed10fa748930df25e7be3b6c01"
+  integrity sha512-uXKbEu/vk8yKYvVOsH0Ev2CN2XaFQmxfOnWE/8VRWR3o/xOeSWP/QKPUly6H+A7jtUMjBqYkUNRryKvwYNqbSw==
   dependencies:
     axios "0.21.1"
     axios-jsonp-pro "1.1.8"
@@ -2800,27 +2800,27 @@
     winston "3.3.3"
     winston-daily-rotate-file "4.5.2"
 
-"@ustra/data@2.0.45-snapshot.6", "@ustra/data@^2.0.45-snapshot.6":
-  version "2.0.45-snapshot.6"
-  resolved "https://repo.gsitm.com/repository/npm-private/@ustra/data/-/data-2.0.45-snapshot.6.tgz#01bd1bf90ee6af4eef7fb3134bd59408fd9160d4"
-  integrity sha512-VygpAy3P6MPaeeDEgCVzB0i22UoeJGuNkTsz5ZyqDePFHOsqRMNz3oeYVuAcOuaOg9UwEJgV7f9bZj+cHHTo1w==
+"@ustra/data@2.0.45-snapshot.7", "@ustra/data@^2.0.45-snapshot.7":
+  version "2.0.45-snapshot.7"
+  resolved "https://repo.gsitm.com/repository/npm-private/@ustra/data/-/data-2.0.45-snapshot.7.tgz#785562f8e7f71acbc9c0d07539439b20d4705375"
+  integrity sha512-Hn5doQK+jNkdZRX4006k5SqCLrEMxVL1oakeMxahqFetRz23ZBsZf+JKFsxIHNtYnO8+HL6x86RdqGH9WVmhDg==
   dependencies:
-    "@ustra/core" "^2.0.45-snapshot.6"
+    "@ustra/core" "^2.0.45-snapshot.7"
 
-"@ustra/nuxt-dx-mng-bo@2.0.45-snapshot.6":
-  version "2.0.45-snapshot.6"
-  resolved "https://repo.gsitm.com/repository/npm-private/@ustra/nuxt-dx-mng-bo/-/nuxt-dx-mng-bo-2.0.45-snapshot.6.tgz#b364681e98aafbbd5a0290c02fd34265ba59303b"
-  integrity sha512-nHx0hJ5QA2zFjVtU6X9kYdrovJOrunp1fWqdudMtjr3aSLpIBlNsQ4FPP+65UyLBJOQVJ/jUjORRWSFZd3VQxQ==
+"@ustra/nuxt-dx-mng-bo@2.0.45-snapshot.7":
+  version "2.0.45-snapshot.7"
+  resolved "https://repo.gsitm.com/repository/npm-private/@ustra/nuxt-dx-mng-bo/-/nuxt-dx-mng-bo-2.0.45-snapshot.7.tgz#1bfaf2ba0c788faabf79fc83770bf0bdd8c958a1"
+  integrity sha512-mgDmkzMqR3XfF1F5IWAhIM59YYPoi6+Di5wXnKwTjj/Ff9bbpw393oIJKzj6Ngm5J9Q3WsKX/UBZvZxNcZhyWQ==
   dependencies:
-    "@ustra/nuxt-dx" "^2.0.45-snapshot.6"
-    "@ustra/nuxt-mng-bo" "^2.0.45-snapshot.6"
+    "@ustra/nuxt-dx" "^2.0.45-snapshot.7"
+    "@ustra/nuxt-mng-bo" "^2.0.45-snapshot.7"
 
-"@ustra/nuxt-dx@2.0.45-snapshot.6", "@ustra/nuxt-dx@^2.0.45-snapshot.6":
-  version "2.0.45-snapshot.6"
-  resolved "https://repo.gsitm.com/repository/npm-private/@ustra/nuxt-dx/-/nuxt-dx-2.0.45-snapshot.6.tgz#13c8feac1b6441e356b76bf639367e7121035d2c"
-  integrity sha512-+3WD7/taWDSdWY0aRiT74n0QR9azR+x1koFt9iiLpZJYInBxwTUF13Drq3b+9DmZcD+XoPxI60CLhSBWbA4u+Q==
+"@ustra/nuxt-dx@2.0.45-snapshot.7", "@ustra/nuxt-dx@^2.0.45-snapshot.7":
+  version "2.0.45-snapshot.7"
+  resolved "https://repo.gsitm.com/repository/npm-private/@ustra/nuxt-dx/-/nuxt-dx-2.0.45-snapshot.7.tgz#5208edbf2b21b70d6fb5b3cc688a46587cc2c63b"
+  integrity sha512-41okD4iSbPeftbuEQqgnwcULYcEO30S9oDfd+a21Ak9uY4Q6hzwtKR5JwXZ0S+MxaN1TQMCc6uwWPU48V6aTUw==
   dependencies:
-    "@ustra/nuxt" "^2.0.45-snapshot.6"
+    "@ustra/nuxt" "^2.0.45-snapshot.7"
     devextreme "20.1-stable"
     devextreme-cldr-data "^1.0.3"
     devextreme-vue "20.1-stable"
@@ -2829,32 +2829,32 @@
     globalize "^1.6.0"
     material-icons "^0.3.1"
 
-"@ustra/nuxt-mng-bo@2.0.45-snapshot.6", "@ustra/nuxt-mng-bo@^2.0.45-snapshot.6":
-  version "2.0.45-snapshot.6"
-  resolved "https://repo.gsitm.com/repository/npm-private/@ustra/nuxt-mng-bo/-/nuxt-mng-bo-2.0.45-snapshot.6.tgz#221869366e3d4aa7bacec07e2b7bb7f5405d1bcb"
-  integrity sha512-JIgX9js94X7qhNaU4S9pH80gL2I7xwRrf8Lstzbdm+64shPe5CBJKW35Su6iIwx85AeKgVdNXdtokDRuwmJgMQ==
+"@ustra/nuxt-mng-bo@2.0.45-snapshot.7", "@ustra/nuxt-mng-bo@^2.0.45-snapshot.7":
+  version "2.0.45-snapshot.7"
+  resolved "https://repo.gsitm.com/repository/npm-private/@ustra/nuxt-mng-bo/-/nuxt-mng-bo-2.0.45-snapshot.7.tgz#d7515d7462113f819401aca5aae41e237992f920"
+  integrity sha512-AireAfJk4D2/AxtAZjcIaiFvvFpPwJ/f09O9v0XQJ1YFDddUv7SpYtVswpKuWvkeVeoiyn88sSDGQTvwFzdkyw==
   dependencies:
-    "@ustra/nuxt-mng" "^2.0.45-snapshot.6"
+    "@ustra/nuxt-mng" "^2.0.45-snapshot.7"
 
-"@ustra/nuxt-mng@2.0.45-snapshot.6", "@ustra/nuxt-mng@^2.0.45-snapshot.6":
-  version "2.0.45-snapshot.6"
-  resolved "https://repo.gsitm.com/repository/npm-private/@ustra/nuxt-mng/-/nuxt-mng-2.0.45-snapshot.6.tgz#9350a60778d01f9111f0c594c487c38738a8f0d9"
-  integrity sha512-lm8LbODjpg+o/2xOFg0Jv+EBoA1xlbjNVM4DsUrUOBElz+RCPDSAEcUOhxxtg+y5GdfofM45Ri1u/0O2Fp8ozg==
+"@ustra/nuxt-mng@2.0.45-snapshot.7", "@ustra/nuxt-mng@^2.0.45-snapshot.7":
+  version "2.0.45-snapshot.7"
+  resolved "https://repo.gsitm.com/repository/npm-private/@ustra/nuxt-mng/-/nuxt-mng-2.0.45-snapshot.7.tgz#7beb3c9158fbc165641406c35ac4f7e373bd2e82"
+  integrity sha512-SBedX+GjVoGLp/DaKw+1vfA1c4w2SnRqunJXgaXQSGyAlABJiyCIiJX/OFyBJnsP0ENE2rK++b03z4fHHJRgfQ==
   dependencies:
-    "@ustra/nuxt" "^2.0.45-snapshot.6"
+    "@ustra/nuxt" "^2.0.45-snapshot.7"
 
-"@ustra/nuxt-vuetify@2.0.45-snapshot.6":
-  version "2.0.45-snapshot.6"
-  resolved "https://repo.gsitm.com/repository/npm-private/@ustra/nuxt-vuetify/-/nuxt-vuetify-2.0.45-snapshot.6.tgz#3e05389a0816192ba46b4f9955afd79ad093f3c0"
-  integrity sha512-UhpD4DzWlE3vdF7yDFvxqdB0VJVYmqRaASoApzmtpSQ0W/i62xW9xDk87wvDdbSXzYfnZfm9IIDvvlOFWrtB9g==
+"@ustra/nuxt-vuetify@2.0.45-snapshot.7":
+  version "2.0.45-snapshot.7"
+  resolved "https://repo.gsitm.com/repository/npm-private/@ustra/nuxt-vuetify/-/nuxt-vuetify-2.0.45-snapshot.7.tgz#55658484521882b4d3184f1b7bb4d2814875b99e"
+  integrity sha512-xz8JK1ycm3mExqrbJwoHDGI4iXgxtVpvJ6wTot9EDDHKkVyKOavvITkF1vM0zl941mzxnZNM0S67CeluEKOcfQ==
   dependencies:
     "@nuxtjs/vuetify" "1.12.3"
-    "@ustra/nuxt" "^2.0.45-snapshot.6"
+    "@ustra/nuxt" "^2.0.45-snapshot.7"
 
-"@ustra/nuxt@2.0.45-snapshot.6", "@ustra/nuxt@^2.0.45-snapshot.6":
-  version "2.0.45-snapshot.6"
-  resolved "https://repo.gsitm.com/repository/npm-private/@ustra/nuxt/-/nuxt-2.0.45-snapshot.6.tgz#3b315ff2490541f2cfb435d66b89fa9cfd27a6a4"
-  integrity sha512-Dt+K9brk5MUh1VB1+xRiXSZbMoGCM6ItQWrP5wvab70ESo9oxoAHhU3XMCxumJ+UPVyjzA4hPnM0netHnmppBw==
+"@ustra/nuxt@2.0.45-snapshot.7", "@ustra/nuxt@^2.0.45-snapshot.7":
+  version "2.0.45-snapshot.7"
+  resolved "https://repo.gsitm.com/repository/npm-private/@ustra/nuxt/-/nuxt-2.0.45-snapshot.7.tgz#a883c4beb5b697d671f22bf0a2cc72c4a10c6fe4"
+  integrity sha512-GSDo0t91skoJ6ZvXKOL/IiMyNQ4spLG+O61vnJbHWapXHdsjyfTUgfErluTXbM/R1fpWpvmxwu+lUNKRy0W77g==
   dependencies:
     "@nuxt/typescript-runtime" "2.1.0"
     "@nuxtjs/axios" "5.13.6"
@@ -2862,8 +2862,8 @@
     "@nuxtjs/proxy" "2.1.0"
     "@nuxtjs/redirect-module" "0.3.1"
     "@nuxtjs/router" "1.6.1"
-    "@ustra/core" "^2.0.45-snapshot.6"
-    "@ustra/data" "^2.0.45-snapshot.6"
+    "@ustra/core" "^2.0.45-snapshot.7"
+    "@ustra/data" "^2.0.45-snapshot.7"
     add "2.0.6"
     bluebird "3.7.2"
     body-parser "1.19.0"

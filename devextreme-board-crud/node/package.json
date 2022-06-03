@@ -22,14 +22,14 @@
     "create-off-pack": "rm -rf node_modules && rm yarn.lock && rm -rf npm_packages/* && yarn cache clean && yarn install"
   },
   "dependencies": {
-    "@ustra/core": "2.0.45-snapshot.6",
-    "@ustra/data": "2.0.45-snapshot.6",
-    "@ustra/nuxt": "2.0.45-snapshot.6",
-    "@ustra/nuxt-vuetify": "2.0.45-snapshot.6",
-    "@ustra/nuxt-dx": "2.0.45-snapshot.6",
-    "@ustra/nuxt-dx-mng-bo": "2.0.45-snapshot.6",
-    "@ustra/nuxt-mng": "2.0.45-snapshot.6",
-    "@ustra/nuxt-mng-bo": "2.0.45-snapshot.6"
+    "@ustra/core": "2.0.45-snapshot.7",
+    "@ustra/data": "2.0.45-snapshot.7",
+    "@ustra/nuxt": "2.0.45-snapshot.7",
+    "@ustra/nuxt-vuetify": "2.0.45-snapshot.7",
+    "@ustra/nuxt-dx": "2.0.45-snapshot.7",
+    "@ustra/nuxt-dx-mng-bo": "2.0.45-snapshot.7",
+    "@ustra/nuxt-mng": "2.0.45-snapshot.7",
+    "@ustra/nuxt-mng-bo": "2.0.45-snapshot.7"
   },
   "devDependencies": {
     "@babel/eslint-parser": "7.16.3",

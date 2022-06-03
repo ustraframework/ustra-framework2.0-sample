@@ -56,7 +56,7 @@ import { Component, Prop, PropSync, Watch, Ref } from 'vue-property-decorator'
 import { UstraBoComponent } from '@ustra/nuxt-mng-bo/src/components/ustra-bo-component'
 import { UFieldSet } from '@ustra/nuxt-dx/src/components'
 import { OnError } from '@ustra/nuxt/src/vue/decorators'
-import UFileUploadBox from '@ustra/nuxt-dx-mng-bo/src/components/common/ustra-file-upload-box.vue'
+import UFileUploadBox from '@ustra/nuxt-dx-mng-bo/src/components/common/ustra-file-upload-box'
 import { boardService, Board } from '~/services/board-sevice'
 
 @Component
@@ -76,7 +76,7 @@ export default class extends UstraBoComponent {
   // #region hooks
   // #endregion
   // #region methods
-  init() {
+  async init() {
     this.isNewForm = true
     this.inputData = {
       postId: null,
@@ -87,6 +87,7 @@ export default class extends UstraBoComponent {
       fileId: null,
     }
     this.uploadFileInfo = {}
+    await this.fieldSet.initValidation()
   }
 
   @OnError({
@@ -116,8 +117,6 @@ export default class extends UstraBoComponent {
     if (!result.isValid) {
       return
     }
-
-    // @ts-ignore
     await this.fileUploader.upload()
 
     this.inputData.fileId = this.uploadFileInfo?.fileId
