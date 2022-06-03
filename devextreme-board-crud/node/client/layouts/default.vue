@@ -249,7 +249,7 @@ export default class extends UstraBoComponent {
       this.menuTemporaryOpened = false
     }
 
-    this.isSamplePage = startsWith(this.$route.path, '/sample')
+    this.isSamplePage = startsWith(this.$route.path, '/sample/')
 
     // if main page
     if (this.mainPageUrl === this.$route.path) {

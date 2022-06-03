@@ -32,6 +32,8 @@ ustra:
           driver-class-name: net.sf.log4jdbc.sql.jdbcapi.DriverSpy
           username: ENC(FU4O8ZERHw5YtXQTF5NPolmBuV3q231Ys//jNneyN2EfwLNT0RnlqQ==)
           password: ENC(QVezyfgonhJprL0mPoLbjMl1Hp83S3y4)
+          properties:
+            max-lifetime: 300
     file:
       enabled: true
       crypto:        enabled: true

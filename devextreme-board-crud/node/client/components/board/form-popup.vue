@@ -1,5 +1,16 @@
 <template>
-  <dx-popup :width="800" :height="700" :visible.sync="isVisible" v-on="$listeners" @shown="$refs.titleBox.instance.focus()">
+  <dx-popup
+    :width="800"
+    :height="700"
+    :visible.sync="isVisible"
+    v-on="$listeners"
+    @shown="
+      () => {
+        $refs.titleBox.instance.focus()
+        this.fieldSet.initValidation()
+      }
+    "
+  >
     <dx-box direction="col" height="100%">
       <dx-item :ratio="1">
         <template #default>
@@ -87,7 +98,7 @@ export default class extends UstraBoComponent {
       fileId: null,
     }
     this.uploadFileInfo = {}
-    await this.fieldSet.initValidation()
+    // await this.fieldSet.initValidation()
   }
 
   @OnError({
