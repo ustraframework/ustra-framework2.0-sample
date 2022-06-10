@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.gsitm.ustra.java.sample.api.example.ExampleMapper">
+
+    <select id="selectAll" resultType="com.gsitm.ustra.java.sample.api.example.ExampleModel">
+        SELECT GRP_CD
+            ,DTL_CD
+            ,CD_NM
+        FROM USTRA_SAMPLE_CMM_CD
+        WHERE 1=1
+        <if test="useYn != null">
+            AND USE_YN = #{useYn}
+        </if>
+    </select>
+
+    <select id="getCodes" resultType="com.gsitm.ustra.java.sample.api.example.ExampleModel">
+        SELECT GRP_CD,
+               DTL_CD,
+               CD_NM
+        FROM USTRA_SAMPLE_CMM_CD
+    </select>
+
+</mapper>
