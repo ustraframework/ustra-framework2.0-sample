@@ -1,0 +1,103 @@
+buildscript {
+    ext {
+        springBootVersion = '2.2.5.RELEASE'
+        set('springCloudVersion', "Hoxton.SR3")
+        set('log4j2.version', '2.17.1')
+    }
+
+    repositories {
+        mavenCentral()
+        maven { url "https://plugins.gradle.org/m2/" }
+        maven { url "https://repo.gsitm.com/repository/m2-public/" }
+    }
+
+    dependencies {
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+        classpath('io.spring.gradle:dependency-management-plugin:1.0.9.RELEASE')
+        classpath("io.franzbecker:gradle-lombok:1.8")
+    }
+}
+
+configurations.all {
+    resolutionStrategy.eachDependency { DependencyResolveDetails details ->
+        if (details.requested.group == 'org.apache.logging.log4j') {
+            details.useVersion '2.17.1'
+        }
+    }
+}
+
+
+group = 'com.gsitm.ustra.java'
+version = '0.0.1-SNAPSHOT'
+
+ext {
+    ustraVersion = '2.0.51.127-SNAPSHOT'
+    set('springCloudVersion', "Hoxton.SR3")
+    set('log4j2.version', '2.17.1')
+}
+
+apply plugin: 'org.springframework.boot'
+apply plugin: 'io.spring.dependency-management'
+apply plugin: 'java'
+apply plugin: 'eclipse'
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+eclipse {
+    classpath { downloadSources=true }
+}
+
+dependencyManagement {
+    imports {
+        mavenBom "org.springframework.cloud:spring-cloud-dependencies:${springCloudVersion}"
+    }
+}
+
+task initSourceFolders {
+    sourceSets*.java.srcDirs*.each {
+        if (!it.exists()) {
+            it.mkdirs()
+        }
+    }
+
+    sourceSets*.resources.srcDirs*.each {
+        if (!it.exists()) {
+            it.mkdirs()
+        }
+    }
+}
+
+repositories {
+    mavenCentral()
+    maven { url "https://repo.gsitm.com/repository/public/" }
+    maven { url "https://repo.gsitm.com/repository/m2-public/" }
+}
+
+dependencies {
+    implementation 'org.apache.logging.log4j:log4j-to-slf4j:2.17.1'
+    implementation 'org.apache.logging.log4j:log4j-api:2.17.1'
+    implementation 'ch.qos.logback:logback-core:1.2.9'
+    implementation 'ch.qos.logback:logback-classic:1.2.9'
+
+    implementation 'org.springframework.boot:spring-boot-starter'
+    testCompile('org.springframework.boot:spring-boot-starter-test') {
+        exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
+    }
+    testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
+
+    compileOnly 'org.projectlombok:lombok'
+    compile 'org.springframework.boot:spring-boot-starter-aop'
+
+    annotationProcessor 'org.springframework.boot:spring-boot-configuration-processor'
+    annotationProcessor 'org.projectlombok:lombok'
+
+    testAnnotationProcessor 'org.projectlombok:lombok'
+    testCompileOnly 'org.projectlombok:lombok'
+}
+
+dependencies {
+    compile "com.gsitm.ustra.java.starter:ustra-starter-vue-bo:${ustraVersion}"
+    compile 'io.springfox:springfox-swagger2:2.9.2'
+    compile 'io.springfox:springfox-swagger-ui:2.9.2'
+}
