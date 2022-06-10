@@ -3,10 +3,10 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.gsitm.ustra.java</groupId>
-	<artifactId>java-sample-template</artifactId>
+	<artifactId>devextreme-vue-board</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>java-sample-template</name>
-	<description>Demo project for Spring Boot</description>
+	<name>devextreme-vue-board</name>
+	<description>Tutorial for U.STRA Framework, Creating Bulletin Board using DevExtreme UI Components</description>
 	
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>

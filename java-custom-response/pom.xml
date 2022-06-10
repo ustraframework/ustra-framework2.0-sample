@@ -3,10 +3,10 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.gsitm.ustra.java</groupId>
-	<artifactId>java-sample-template</artifactId>
+	<artifactId>java-custom-response</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>java-sample-template</name>
-	<description>Demo project for Spring Boot</description>
+	<name>java-custom-response</name>
+	<description>Tutorial for U.STRA Framework, JAVA - Customizing API Responses and Handling Exceptions</description>
 	
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>

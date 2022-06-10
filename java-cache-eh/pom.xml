@@ -3,10 +3,10 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.gsitm.ustra.java</groupId>
-	<artifactId>ustraframework-sample-java-api</artifactId>
+	<artifactId>java-cache-eh</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>ustraframework-sample-java-api</name>
-	<description>Sample project for U.STRA Framework</description>
+	<name>java-cache-eh</name>
+	<description>Tutorial for U.STRA Framework, JAVA - Using Cache - EhCache</description>
 	
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
