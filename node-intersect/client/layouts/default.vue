@@ -1,22 +1,18 @@
 <template>
   <div>
     <nuxt />
-    <u-b-dialog />
-    <u-b-loading />
   </div>
 </template>
 <script lang="ts">
-import { Component } from 'vue-property-decorator'
-import { UstraComponent } from '@ustra/nuxt/src/vue/components/ustra-component'
-import UBDialog from '@ustra/nuxt-buefy/src/components/u-b-dialog.vue'
-import UBLoading from '@ustra/nuxt-buefy/src/components/u-b-loading.vue'
+import { Component } from "vue-property-decorator";
+import { UstraComponent } from "@ustra/nuxt/src/vue/components/ustra-component";
 
 @Component({
-  components: { UBDialog, UBLoading },
+  components: {},
 })
 export default class extends UstraComponent {
   // #region variables
-  showDrawer: boolean = false
+  showDrawer: boolean = false;
   // #endregion
   // #region hooks
   created() {}
