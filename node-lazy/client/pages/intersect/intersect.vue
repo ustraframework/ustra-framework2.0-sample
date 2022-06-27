@@ -1,5 +1,6 @@
 <template>
   <div v-scroll.bottom="{ handler: onScrollDown, options: { duration: 1000 } }">
+    <!-- <IntersectProduct v-for="item in products" :key="item.code" :product="item" /> -->
     <IntersectLazyProduct
       v-for="item in products"
       :key="item.code"
