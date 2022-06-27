@@ -1,5 +1,6 @@
 <template>
   <div v-scroll.bottom="{ handler: onScrollDown, options: { duration: 1000 } }">
+    <!-- Intersect 샘플 프로젝트와 비교하기 위한 컴포넌트 IntersectLazyProduct 컴포넌트 대신 사용 -->
     <!-- <IntersectProduct v-for="item in products" :key="item.code" :product="item" /> -->
     <IntersectLazyProduct
       v-for="item in products"
