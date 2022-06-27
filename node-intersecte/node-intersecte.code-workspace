@@ -1,0 +1,45 @@
+{
+  "folders": [
+    {
+      "path": "."
+    }
+  ],
+  "settings": {
+    "editor.tabSize": 2,
+    "http.proxyStrictSSL": false,
+    "prettier.packageManager": "yarn",
+    "editor.formatOnSave": true,
+    "explorer.autoReveal": true,
+    "files.eol": "\n",
+    "liveServer.settings.multiRootWorkspaceName": "packages",
+    "javascript.implicitProjectConfig.experimentalDecorators": true,
+    "eslint.enable": true,
+    "eslint.options": { "configFile": "./.eslintrc" },
+    "terminal.integrated.shell.windows": "C:\\Program Files\\Git\\bin\\bash.exe",
+    "workbench.iconTheme": "material-icon-theme",
+    "editor.suggestSelection": "first",
+    "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+    "path-intellisense.extensionOnImport": true,
+    "files.associations": {
+      "*.json": "jsonc"
+    },
+    "editor.fontFamily": "나눔고딕코딩, Consolas, 'Courier New', monospace",
+    "git.autofetch": true,
+    "editor.formatOnPaste": true,
+    "editor.formatOnType": true,
+    "[javascript]": {
+      "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[jsonc]": {
+      "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "todo-tree.tree.showScanModeButton": false,
+    "[typescript]": {
+      "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[vue]": {
+      "editor.defaultFormatter": "octref.vetur"
+    },
+    "svn.ignoreMissingSvnWarning": true
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "name": "@ustra/demo-nuxt-buefy",
+  "version": "2.0.45-snapshot.11",
+  "description": "USTRA Node framework - demo/nuxt-buefy",
+  "main": "src/index.ts",
+  "types": "types/index.d.ts",
+  "author": "Roy Lee <keymasroy@gmail.com>",
+  "license": "MIT",
+  "private": true,
+  "browserslist": [
+    "last 2 version",
+    "android >= 4.4",
+    "IE >= 11"
+  ],
+  "dependencies": {
+    "@ustra/nuxt": "^2.0.45-snapshot.11",
+    "@ustra/nuxt-buefy": "^2.0.45-snapshot.11"
+  },
+  "scripts": {
+    "dev": "cross-env NODE_ENV=development CONFIG_ENV=local nuxt dev",
+    "generate": "cross-env NODE_ENV=production CONFIG_ENV=local nuxt generate"
+  }
+}
