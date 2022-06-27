@@ -1,11 +1,11 @@
 <template>
   <div v-scroll.bottom="{ handler: onScrollDown, options: { duration: 1000 } }">
     <div>
-      Intersect Sample Test URL =>
+      - Intersect Sample Test URL =>
       <a href="/intersect">http://hostname:port/intersect</a>
     </div>
     <div>
-      Intersect-Lazy Sample Test URL =>
+      - Intersect-Lazy Sample Test URL =>
       <a href="/lazy">http://hostname:port/lazy</a>
     </div>
   </div>
