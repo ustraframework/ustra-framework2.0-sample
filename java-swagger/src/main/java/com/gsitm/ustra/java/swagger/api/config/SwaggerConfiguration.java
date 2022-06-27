@@ -1,4 +1,4 @@
-package com.gsitm.ustra.java.sample.api.config;
+package com.gsitm.ustra.java.swagger.api.config;
 
 import com.gsitm.ustra.java.core.utils.ProfileSupport;
 
@@ -23,7 +23,7 @@ public class SwaggerConfiguration {
     private ApiInfo swaggerInfo() {
 
         return new ApiInfoBuilder()
-                .title("U.STRA Framework Sample Swagger")
+                .title("U.STRA Framework Code Swagger Sample")
                 .description("U.STRA Framework Sample API Document")
                 .version("0.0.1")
                 .build();
@@ -35,13 +35,10 @@ public class SwaggerConfiguration {
         return new Docket(DocumentationType.SWAGGER_2)
                 .useDefaultResponseMessages(false)
                 .select()
-                .apis(RequestHandlerSelectors.basePackage("com.gsitm.ustra.java.sample.api"))
+                .apis(RequestHandlerSelectors.basePackage("com.gsitm.ustra.java.swagger.api"))
                 .paths(PathSelectors.ant("/api/**"))
                 //.paths(PathSelectors.ant("/**"))
                 .build()
                 .apiInfo(swaggerInfo());
     }
-
-
-
 }

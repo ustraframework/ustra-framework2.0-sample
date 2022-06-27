@@ -1,4 +1,4 @@
-package com.gsitm.ustra.java.sample.api.example;
+package com.gsitm.ustra.java.swagger.api.example;
 
 import java.util.List;
 
@@ -12,7 +12,11 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
+import io.swagger.annotations.ApiParam;
 
+@Api("Configure Code Swagger with U.STRA Framework")
 @RestController
 @RequestMapping("/api/example")
 public class ExampleController {
@@ -21,7 +25,8 @@ public class ExampleController {
     private ExampleService exampleService;
 
     @GetMapping("/common/code")
-    public List<ExampleModel> getAll(String useYn) {
+    @ApiOperation(value = "전체 코드 목록 조회", notes = "<strong>코드 전체 목록</string>을 반환")
+    public List<ExampleModel> getAll(@ApiParam("사용 여부") String useYn) {
 
         ExampleModel.Criteria criteria = new ExampleModel.Criteria();
         criteria.setUseYn(useYn);
@@ -30,6 +35,7 @@ public class ExampleController {
     }
 
     @PostMapping("/common/code/page")
+    @ApiOperation(value = "페이지별 코드 목록 조회", notes = "페이지별 코드 목록을 반환")
     public PaginationList<ExampleModel> getCodesByPage(@RequestBody PaginationRequest request) {
         return this.exampleService.getCodes(request);
     }
