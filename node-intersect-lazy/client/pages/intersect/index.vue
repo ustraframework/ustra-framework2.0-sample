@@ -12,6 +12,7 @@ import { Component } from "vue-property-decorator";
 import { UstraComponent } from "@ustra/nuxt/src/vue/components/ustra-component";
 import IntersectProduct from "~/components/intersect/intersect-product.vue";
 
+// 상품 목록 데이터 정의 (정적 데이터)
 const products = [
   {
     code: 1,
@@ -80,21 +81,13 @@ const products = [
 })
 export default class extends UstraComponent {
   // #region variables
-  isActivated: boolean = false;
   products = products;
   currentPageNo = 1;
   // #endregion
   // #region hooks
   // #endregion
   // #region methods
-  onObserve(
-    entries: IntersectionObserverEntry[] = [],
-    observer: IntersectionObserver,
-    isIntersecting: boolean
-  ) {
-    this.isActivated = isIntersecting;
-  }
-
+  // 무한 스크롤 로딩을 위한 메소드
   onScrollDown() {
     if (this.currentPageNo > 5) {
       return;
@@ -103,6 +96,7 @@ export default class extends UstraComponent {
 
     const addProducts = [];
     for (let i = 0; i < 10; i++) {
+      // 추가할 상품 정보 생성
       addProducts.push({
         code: (this.currentPageNo - 1) * 10 + i + 1,
         name: "상품" + ((this.currentPageNo - 1) * 10 + i + 1),
@@ -111,6 +105,7 @@ export default class extends UstraComponent {
       });
     }
 
+    // 생성된 상품 정보 추가
     this.products.push(...addProducts);
   }
   // #endregion

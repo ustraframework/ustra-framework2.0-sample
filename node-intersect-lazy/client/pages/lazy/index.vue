@@ -1,7 +1,5 @@
 <template>
   <div v-scroll.bottom="{ handler: onScrollDown, options: { duration: 1000 } }">
-    <!-- Intersect 샘플 프로젝트와 비교하기 위한 컴포넌트 IntersectLazyProduct 컴포넌트 대신 사용 -->
-    <!-- <IntersectProduct v-for="item in products" :key="item.code" :product="item" /> -->
     <IntersectLazyProduct
       v-for="item in products"
       :key="item.code"
@@ -12,9 +10,9 @@
 <script lang="ts">
 import { Component } from "vue-property-decorator";
 import { UstraComponent } from "@ustra/nuxt/src/vue/components/ustra-component";
-import IntersectProduct from "~/components/intersect/intersect-product.vue";
 import IntersectLazyProduct from "~/components/intersect/intersect-lazy-product.vue";
 
+// 상품 목록 데이터 정의 (정적 데이터)
 const products = [
   {
     code: 1,
@@ -79,25 +77,17 @@ const products = [
 ];
 
 @Component({
-  components: { IntersectProduct, IntersectLazyProduct },
+  components: { IntersectLazyProduct },
 })
 export default class extends UstraComponent {
   // #region variables
-  isActivated: boolean = false;
   products = products;
   currentPageNo = 1;
   // #endregion
   // #region hooks
   // #endregion
   // #region methods
-  onObserve(
-    entries: IntersectionObserverEntry[] = [],
-    observer: IntersectionObserver,
-    isIntersecting: boolean
-  ) {
-    this.isActivated = isIntersecting;
-  }
-
+  // 무한 스크롤 로딩을 위한 메소드
   onScrollDown() {
     if (this.currentPageNo > 5) {
       return;
@@ -106,6 +96,7 @@ export default class extends UstraComponent {
 
     const addProducts = [];
     for (let i = 0; i < 10; i++) {
+      // 추가할 상품 정보 생성
       addProducts.push({
         code: (this.currentPageNo - 1) * 10 + i + 1,
         name: "상품" + ((this.currentPageNo - 1) * 10 + i + 1),
@@ -114,6 +105,7 @@ export default class extends UstraComponent {
       });
     }
 
+    // 생성된 상품 정보 추가
     this.products.push(...addProducts);
   }
   // #endregion
