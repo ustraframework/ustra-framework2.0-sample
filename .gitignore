@@ -1,2 +1,7 @@
 /.metadata/
 .gradle
+node_modules
+.nuxt
+#intellij
+.idea
+*.iml

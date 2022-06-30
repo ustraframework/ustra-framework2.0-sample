@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html {{ HTML_ATTRS }}>
+  <head {{ HEAD_ATTRS }}>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    {{ HEAD }}
+  </head>
+
+  <body {{ BODY_ATTRS }} class="dx-viewport">
+    {{ APP }}
+    <div style="display: none" th:text="${spaData}" id="__spa">{{ SERVER_DATA }}</div>
+  </body>
+</html>
