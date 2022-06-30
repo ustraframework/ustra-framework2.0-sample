@@ -1,0 +1,40 @@
+{
+  "name": "@ustra-tutorial/ustra-batch",
+  "main": "src/index.ts",
+  "browserslist": [
+    "last 2 version",
+    "android >= 4.4",
+    "IE >= 11"
+  ],
+  "resolutions": {
+    "highlight.js": "10.6.0",
+    "postcss-loader": "3.0.0",
+    "sass": "1.32.12"
+  },
+  "devDependencies": {
+    "@nuxt/typescript-build": "2.1.0",
+    "@nuxt/types": "2.15.7",
+    "@nuxtjs/storybook": "^4.0.4",
+    "@storybook/addon-docs": "^6.2.9",
+    "@storybook/addon-knobs": "^6.2.9",
+    "@storybook/addon-viewport": "^6.2.9",
+    "@types/cross-spawn": "6.0.2",
+    "@types/node": "14.17.2",
+    "cpx": "1.5.0",
+    "cross-env": "5.2.1",
+    "cross-spawn": "^7.0.3",
+    "nodemon": "^2.0.4",
+    "onezip": "4.2.2",
+    "rimraf": "^3.0.2",
+    "ts-node": "8.10.2",
+    "typedoc": "^0.17.7",
+    "typescript": "4.2.4"
+  },
+  "dependencies": {
+    "@ustra/nuxt-dx-mng-bo": "^2.0.44-snapshot.40",
+    "@ustra/nuxt-mng-bo": "^2.0.44-snapshot.40"
+  },
+  "scripts": {
+    "dev": "cross-env NODE_ENV=development CONFIG_ENV=local nuxt dev"
+  }
+}

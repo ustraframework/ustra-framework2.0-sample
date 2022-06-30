@@ -1,0 +1,2 @@
+include ":task"
+project(":task").projectDir = file("../task")
