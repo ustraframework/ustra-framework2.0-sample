@@ -8,6 +8,10 @@
       - Intersect-Lazy Sample Test URL =>
       <a href="/lazy">http://hostname:port/lazy</a>
     </div>
+    <div>
+      - Intersect-skeleton Sample Test URL =>
+      <a href="/skeleton">http://hostname:port/skeleton</a>
+    </div>
   </div>
 </template>
 <script lang="ts">
