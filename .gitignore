@@ -1,1 +1,13 @@
 /.metadata/
+
+# intellij
+.idea
+*.iml
+
+# gradle
+.gradle
+build
+
+# node
+node_modules
+.nuxt

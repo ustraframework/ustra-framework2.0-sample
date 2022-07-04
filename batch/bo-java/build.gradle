@@ -1,0 +1,63 @@
+plugins {
+    id 'org.springframework.boot' version '2.2.5.RELEASE'
+    id 'java'
+}
+
+configurations.all {
+    resolutionStrategy.eachDependency { details ->
+        if (details.requested.group == 'org.springframework.boot') {
+            details.useVersion '2.2.5.RELEASE'
+        }
+    }
+}
+
+repositories {
+    mavenCentral()
+    maven { url "https://repo.gsitm.com/repository/public/" }
+    maven { url "https://repo.gsitm.com/repository/m2-public/" }
+}
+
+ext {
+    set('springCloudVersion', "Hoxton.SR3")
+    ext['log4j2.version'] = '2.17.1'
+    set('ustraVersion', '2.0.51.144-SNAPSHOT')
+}
+
+task initSourceFolders {
+    sourceSets*.java.srcDirs*.each {
+        if (!it.exists()) {
+            it.mkdirs()
+        }
+    }
+
+    sourceSets*.resources.srcDirs*.each {
+        if (!it.exists()) {
+            it.mkdirs()
+        }
+    }
+}
+
+dependencies {
+    annotationProcessor 'org.springframework.boot:spring-boot-configuration-processor'
+
+    compile project(':task')
+    compile "com.gsitm.ustra.java:ustra-data-mybatis:${ustraVersion}"
+    compile "com.gsitm.ustra.java:ustra-core:${ustraVersion}"
+    compile "com.gsitm.ustra.java:ustra-security-jwt:${ustraVersion}"
+    compile "com.gsitm.ustra.java:ustra-mvc-rest:${ustraVersion}"
+    compile "com.gsitm.ustra.java:ustra-autoconfigure:${ustraVersion}"
+    compile "com.gsitm.ustra.java:ustra-management-bo:${ustraVersion}"
+    compile "com.gsitm.ustra.java.starter:ustra-starter-batch:${ustraVersion}"
+    compile 'org.apache.logging.log4j:log4j-to-slf4j:2.17.1'
+    compile 'org.apache.logging.log4j:log4j-api:2.17.1'
+    compile 'ch.qos.logback:logback-core:1.2.9'
+    compile 'ch.qos.logback:logback-classic:1.2.9'
+    compileOnly 'org.springframework.boot:spring-boot-devtools'
+    compile 'org.springframework.boot:spring-boot-starter-aop'
+    compile group: 'org.reflections', name: 'reflections', version: '0.9.11'
+
+    implementation 'org.springframework.boot:spring-boot-starter'
+
+    runtime project(':task')
+
+}
