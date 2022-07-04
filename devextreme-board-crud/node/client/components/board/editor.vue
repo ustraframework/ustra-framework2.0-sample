@@ -4,14 +4,9 @@
 <script lang="ts">
 import { Component, Ref, Model, Watch, Prop } from 'vue-property-decorator'
 import { UstraBoComponent } from '@ustra/nuxt-mng-bo/src/components/ustra-bo-component'
-import { clearInterval, setInterval } from 'timers'
 import { dxPopup } from '@ustra/nuxt-dx/src/components'
-import { setInitialValue, getInitialValue } from '@ustra/nuxt-dx/src/utils/dx-component-utils'
-
-declare var nhn: any
 
 @Component({
-  components: {},
   head: {
     script: [{ type: 'text/javascript', src: '/smarteditor2-2.10.0/js/service/HuskyEZCreator.js', charset: 'utf-8' }],
   },
@@ -26,7 +21,7 @@ export default class extends UstraBoComponent {
   valueSyncTimer: any = null
 
   mounted() {
-    this.createEditor(true)
+    this.createEditor()
     this.addEventForDxPopup()
   }
 
@@ -50,7 +45,7 @@ export default class extends UstraBoComponent {
         'shown',
         // @ts-ignore
         this.$ustra.utils.function.wrap(dxPopupComponents[0].$listeners.shown, (next, ...args) => {
-          this.createEditor(true).then(() => next())
+          this.createEditor().then(() => next())
         }),
       )
 
@@ -65,16 +60,16 @@ export default class extends UstraBoComponent {
         }),
       )
 
-      dxPopupInstance.off('hidden')
-      // @ts-ignore
-      dxPopupInstance.on(
-        'hidden',
-        // @ts-ignore
-        this.$ustra.utils.function.wrap(dxPopupComponents[0].$listeners.hidden, (next, ...args) => {
-          next()
-          // this.$emit('value', null)
-        }),
-      )
+      // dxPopupInstance.off('hidden')
+      // // @ts-ignore
+      // dxPopupInstance.on(
+      //   'hidden',
+      //   // @ts-ignore
+      //   this.$ustra.utils.function.wrap(dxPopupComponents[0].$listeners.hidden, (next, ...args) => {
+      //     next()
+      //     // this.$emit('value', null)
+      //   }),
+      // )
     }
   }
 
@@ -90,15 +85,9 @@ export default class extends UstraBoComponent {
   /**
    * 에디터 생성
    */
-  async createEditor(clear: boolean = false) {
+  async createEditor() {
     try {
-      if (this.editorLoaded) {
-        if (!clear) {
-          return
-        }
-
-        this.clearEditor()
-      }
+      this.clearEditor()
 
       this.editorLoaded = true
 
