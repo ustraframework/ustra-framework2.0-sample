@@ -3,11 +3,14 @@
     :width="800"
     :height="700"
     :visible.sync="isVisible"
+    :title="windowTitle"
     v-on="$listeners"
     @shown="
       () => {
         $refs.titleBox.instance.focus()
         this.fieldSet.initValidation()
+
+        $ustra.dom.window.setTimeout(() => (this.board ? this.loadDetail() : this.init()), 0)
       }
     "
   >
@@ -36,11 +39,12 @@
             </u-field-row>
             <u-field-row>
               <u-field>
-                <dx-text-area v-model="inputData.cont" :height="300">
+                <Editor ref="editor" v-model="inputData.cont" />
+                <!-- <dx-text-area v-model="inputData.cont" :height="300">
                   <dx-validator>
                     <dx-required-rule />
                   </dx-validator>
-                </dx-text-area>
+                </dx-text-area> -->
               </u-field>
             </u-field-row>
             <u-field-row>
@@ -69,8 +73,11 @@ import { UFieldSet } from '@ustra/nuxt-dx/src/components'
 import { OnError } from '@ustra/nuxt/src/vue/decorators'
 import UFileUploadBox from '@ustra/nuxt-dx-mng-bo/src/components/common/ustra-file-upload-box'
 import { boardService, Board } from '~/services/board-sevice'
+import Editor from '~/components/board/editor.vue'
 
-@Component
+@Component({
+  components: { Editor },
+})
 export default class extends UstraBoComponent {
   // #region variables
   @PropSync('visible', { default: false }) isVisible: boolean
@@ -82,6 +89,10 @@ export default class extends UstraBoComponent {
   inputData: Board = {}
   isNewForm: boolean = true
   uploadFileInfo: any = {}
+
+  get windowTitle() {
+    return this.inputData.title || '새 글 작성'
+  }
 
   // #endregion
   // #region hooks
@@ -98,7 +109,6 @@ export default class extends UstraBoComponent {
       fileId: null,
     }
     this.uploadFileInfo = {}
-    // await this.fieldSet.initValidation()
   }
 
   @OnError({
@@ -115,6 +125,7 @@ export default class extends UstraBoComponent {
     }
 
     this.inputData = boardInfo
+
     this.isNewForm = false
     this.uploadFileInfo = {
       fileId: boardInfo.fileId,
@@ -152,11 +163,11 @@ export default class extends UstraBoComponent {
   // #region watches
   @Watch('board', { immediate: true })
   boardChanged(v: Board) {
-    if (!v) {
-      this.init()
-    } else {
-      this.loadDetail()
-    }
+    // if (!v) {
+    //   this.init()
+    // } else {
+    //   this.loadDetail()
+    // }
   }
   // #endregion
 }
