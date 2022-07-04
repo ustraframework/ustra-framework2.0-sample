@@ -3,7 +3,7 @@
     <div>
       <dx-button text="value 값 업데이트" @click="updateValue"></dx-button>
     </div>
-    <Editor v-model="editorValue" />
+    <Editor v-model="editorValue" @valueChanged="(v, o) => $logger().info(v, o)" />
     <div>{{ editorValue }}</div>
   </div>
 </template>

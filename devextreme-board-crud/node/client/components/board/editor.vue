@@ -59,7 +59,13 @@ export default class extends UstraBoComponent {
 
     const editor = await this.getRawEditorObject()
     setInterval(() => {
-      this.$emit('value', editor.getRawHTMLContents())
+      const currentValue = editor.getRawHTMLContents()
+      const oldValue = this.value
+
+      if (currentValue !== oldValue) {
+        this.$emit('valueChanged', currentValue, oldValue)
+        this.$emit('value', editor.getRawHTMLContents())
+      }
     }, 1500)
   }
 
@@ -72,9 +78,10 @@ export default class extends UstraBoComponent {
   @Watch('value', { immediate: true })
   async valueChanged(v) {
     const editor = await this.getRawEditorObject()
-
-    if (v !== editor.getRawHTMLContents()) {
+    const oldValue = editor.getRawHTMLContents()
+    if (v !== oldValue) {
       editor.setRawHTMLContents(!v ? '' : v)
+      this.$emit('valueChanged', v, oldValue)
     }
   }
 }
