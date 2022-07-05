@@ -3,5 +3,15 @@
 node_modules
 .nuxt
 #intellij
+
+# intellij
 .idea
 *.iml
+
+# gradle
+.gradle
+build
+
+# node
+node_modules
+.nuxt
