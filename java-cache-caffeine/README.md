@@ -12,24 +12,25 @@ U.STRA Framework - JAVA에서 지원하는 Caffeine Cache를 사용하기 위한
 - 선호하는 텍스트 편집기 혹은 IDE
 - JDK 1.8 이상
 - Gradle 6.x 버전 혹은 Maven 3.2 이상
-- 코드를 IDE로 바로 가져오기 할 수 있다
-    - Visual Studio Code에서 임포트 (방법 링크)
-    - STS에서 임포트 (방법 링크)
-    - IntelliJ에서 임포트 (방법 링크)
 
 # How to complete this guide
 
 - 처음부터 시작하기
-    - 준비된 설정으로부터 U.STRA Framework - JAVA 프로젝트 시작하기 (링크)
-    - CLI로 프로젝트 시작하기 (링크)
+    - 프로젝트 시작하기 : [http://guide.ustraframework.kro.kr/download/installation](http://guide.ustraframework.kro.kr/download/installation)
 - 다운로드하여 실행하기
-    - GitHub에서 다운로드 [https://github.com/ustraframework/ustraframework-sample-java-cache-caffeine](https://github.com/ustraframework/ustraframework-sample-java-cache-caffeine)
-    - git clone 으로 다운로드
-        
-        ```bash
-        git clone https://github.com/ustraframework/ustraframework-sample-java-cache-caffeine.git
-        ```
-        
+    - Repository에서 Clone : [https://github.com/ustraframework/ustra-framework2.0-sample](https://github.com/ustraframework/ustra-framework2.0-sample)
+
+# 예제 파일 다운로드
+
+아래와 같이 github에서 샘플 전체를 다운로드 할 수 있으며, 다운로드 후 devextrme-board-crud 디렉토리로 이동한다.
+
+```
+git clone https://github.com/ustraframework/ustra-framework2.0-sample.git
+```
+
+- 코드 위치 : [https://github.com/ustraframework/ustra-framework2.0-sample/tree/master/java-cache-caffeine](https://github.com/ustraframework/ustra-framework2.0-sample/tree/master/java-cache-caffeine)
+
+
 
 # Writing an application
 
