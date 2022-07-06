@@ -1,8 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <configuration>
-
 	<springProfile name="local">
-
 		<appender name="CONSOLE" class="ch.qos.logback.core.ConsoleAppender">
 			<layout class="ch.qos.logback.classic.PatternLayout">
 				<Pattern>
@@ -11,108 +9,20 @@
 			</layout>
 		</appender>
 
-		<root level="DEBUG">
+		<root level="WARN">
 			<appender-ref ref="CONSOLE"/>
 		</root>
 
-		<logger name="com.gsitm.ustra.java" level="debug" additivity="false">
+		<logger name="com.gsitm.ustra.tutorial" level="DEBUG" additivity="false">
 			<appender-ref ref="CONSOLE"/>
 		</logger>
 
-		<logger name="org.springframework.jdbc.core.JdbcTemplate" level="debug" additivity="false">
+		<logger name="com.gsitm.ustra.java" level="INFO" additivity="false">
 			<appender-ref ref="CONSOLE"/>
 		</logger>
 
-		<logger name="org.springframework.security.web.access.ExceptionTranslationFilter" level="debug" additivity="false">
+		<logger name="org.springframework" level="WARN" additivity="false">
 			<appender-ref ref="CONSOLE"/>
 		</logger>
-
-		<logger name="com.nexacro" level="debug" additivity="false">
-			<appender-ref ref="CONSOLE"/>
-		</logger>
-
-
-		<logger name="jdbc.resultsettable" level="DEBUG" additivity="false">
-			<appender-ref ref="CONSOLE"/>
-		</logger>
-
-		<logger name="jdbc.resultset" level="ERROR" additivity="false">
-			<appender-ref ref="CONSOLE"/>
-		</logger>
-
-		<logger name="jdbc.sqlonly" level="ERROR" additivity="false">
-			<appender-ref ref="CONSOLE"/>
-		</logger>
-
-		<logger name="jdbc.audit" level="ERROR" additivity="false">
-			<appender-ref ref="CONSOLE"/>
-		</logger>
-
-		<logger name="log4jdbc.log4j2" level="ERROR" additivity="false">
-			<appender-ref ref="CONSOLE"/>
-		</logger>
-
-		<logger name="org.springframework.web" level="DEBUG" additivity="false">
-			<appender-ref ref="CONSOLE"/>
-		</logger>
-
-		<logger name="org.springframework.ws.client.MessageTracing.sent" level="DEBUG" additivity="false">
-			<appender-ref ref="CONSOLE"/>
-		</logger>
-
-		<logger name="org.springframework.ws.server.MessageTracing.sent" level="DEBUG" additivity="false">
-			<appender-ref ref="CONSOLE"/>
-		</logger>
-
-		<logger name="org.springframework.ws.client.MessageTracing.received" level="TRACE" additivity="false">
-			<appender-ref ref="CONSOLE"/>
-		</logger>
-
-		<logger name="org.springframework.ws.server.MessageTracing.received" level="TRACE" additivity="false">
-			<appender-ref ref="CONSOLE"/>
-		</logger>
-
 	</springProfile>
-
-	<springProfile name="dev, stg, prd">
-
-		<appender name="CONSOLE" class="ch.qos.logback.core.ConsoleAppender">
-			<layout class="ch.qos.logback.classic.PatternLayout">
-				<Pattern>
-					%d{HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n
-				</Pattern>
-			</layout>
-			<!--  <filter class="com.gscaltex.core.config.LogbackSystemFilter"/>  -->
-		</appender>
-
-		<root level="info">
-			<appender-ref ref="CONSOLE"/>
-		</root>
-
-		<logger name="com.gsitm.ustra.java" level="debug" additivity="false">
-			<appender-ref ref="CONSOLE"/>
-		</logger>
-
-		<logger name="org.springframework.jdbc.core.JdbcTemplate" level="debug" additivity="false">
-			<appender-ref ref="CONSOLE"/>
-		</logger>
-
-		<logger name="jdbc.resultsettable" level="ERROR" additivity="false">
-			<appender-ref ref="CONSOLE"/>
-		</logger>
-
-		<logger name="jdbc.audit" level="ERROR" additivity="false">
-			<appender-ref ref="CONSOLE"/>
-		</logger>
-
-		<logger name="jdbc.resultset" level="ERROR" additivity="false">
-			<appender-ref ref="CONSOLE"/>
-		</logger>
-
-		<logger name="jdbc.sqlonly" level="ERROR" additivity="false">
-			<appender-ref ref="CONSOLE"/>
-		</logger>
-
-	</springProfile>
-
 </configuration>

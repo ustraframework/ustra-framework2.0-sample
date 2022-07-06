@@ -33,16 +33,6 @@ ustra:
           driver-class-name: net.sf.log4jdbc.sql.jdbcapi.DriverSpy
           username: ENC(p6rIPoShJklFLPxHKNJYFLooNCd2xnkayNZ2f+GexyA17qEMS77u8g==)
           password: ENC(ohS/a1/Q/lKriwUq3rqJqht76fQ0Bnge)
-        src:
-          url: jdbc:h2:mem:src
-          driver-class-name: org.h2.Driver
-          username: sa
-          password:
-        dest:
-          url: jdbc:h2:mem:dest
-          driver-class-name: org.h2.Driver
-          username: sa
-          password:
     logging:
        interfaces:
           enabled: true
@@ -66,6 +56,6 @@ ustra:
       id: W01
     logger:
       max-days: 10
-      path-pattern: "/Users/wisehouse/workspace/GSITM/U.STRA TUTORIAL/logs/${taskId}/${taskInstanceId}.log"
-#      path-pattern: "\\logs\\${taskId}\\${taskInstanceId}.log"
+#      path-pattern: "/Users/wisehouse/workspace/GSITM/U.STRA TUTORIAL/logs/${taskId}/${taskInstanceId}.log"
+      path-pattern: "C:\\logs\\${taskId}\\${taskInstanceId}.log"
       log-pattern: "%d{yyyy-MM-dd HH:mm:ss} [%-5p] %c.%M\\(%F:%L\\) : %m%n"
