@@ -1,0 +1,24 @@
+{
+  "configurations": [
+    {
+      "type": "java",
+      "name": "Spring Boot-UstraJavaSampleApiRunner<ustraframework-sample-java-api>",
+      "request": "launch",
+      "cwd": "${workspaceFolder}",
+      "mainClass": "com.gsitm.ustra.java.sample.api.UstraJavaSampleApiRunner",
+      "projectName": "ustraframework-sample-java-api",
+      "args": "",
+      "envFile": "${workspaceFolder}/.env"
+    },
+    {
+      "type": "java",
+      "name": "Spring Boot-UstraJavaSampleCustomResponseRunner<java-custom-response>",
+      "request": "launch",
+      "cwd": "${workspaceFolder}",
+      "mainClass": "com.gstim.ustra.java.sample.custom.UstraJavaSampleCustomResponseRunner",
+      "projectName": "java-custom-response",
+      "args": "",
+      "envFile": "${workspaceFolder}/.env"
+    }
+  ]
+}

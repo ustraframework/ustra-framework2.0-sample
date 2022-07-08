@@ -1,0 +1,68 @@
+
+debug: true
+
+server:
+  port: 8981
+
+spring:
+  profiles:
+    active: local
+
+
+mybatis:
+  mapperLocations: classpath:/mapper/**/*.xml
+  configuration:
+    jdbcTypeForNull: "NULL"
+    mapUnderscoreToCamelCase: true
+
+
+ustra:
+  core:
+    process-info:
+      default-system-code: BO
+  data:
+    procedure-manager:
+      enabled: true
+    datasource:
+      default-datasource-name: rds1
+      datasources:
+        rds1:
+          url: jdbc:log4jdbc:sqlserver://framework-sqlserver.c0uiyan5ae24.ap-northeast-2.rds.amazonaws.com:1433;databaseName=USTRA_FW_SPL
+          driver-class-name: net.sf.log4jdbc.sql.jdbcapi.DriverSpy
+          username: ENC(p6rIPoShJklFLPxHKNJYFLooNCd2xnkayNZ2f+GexyA17qEMS77u8g==)
+          password: ENC(ohS/a1/Q/lKriwUq3rqJqht76fQ0Bnge)
+        h2:
+          url: jdbc:h2:mem:ustra-samples
+          username: sa
+          password:
+    file:
+      enabled: true
+  mvc:
+    view:
+      api-prefix: api
+      client-crypto-key: Z3NjLWNyeXB0by1rZXkxMQ==
+      type: STATIC_THYEMELEAF
+      #type: STATIC_RESOURCE
+    rest:
+      exclude-wrapping-url-patterns: /v2/api-docs,/swagger-resources/**,/swagger-ui.html,/webjars/**
+    wrapper:
+      exclude-request-url-patterns: /v2/api-docs
+      exclude-response-url-patterns: /v2/api-docs
+  management:
+    bo:
+      app:
+        use-auth-approval: true
+        use-user-approval: true
+        password-change-days: 0
+        maximum-auth-group-depth: 5
+      authentication:
+        allow-anoymous-authentication: true
+        system-name: management-bo
+        system-key: BO
+        token-key: acc-token
+        refresh-token-key: ref-token
+        secret-key: asddflkhjasd
+        enable-refresh-token: true
+        refresh-valid-seconds: 6000
+
+

@@ -1,4 +1,8 @@
 /.metadata/
+.gradle
+node_modules
+.nuxt
+#intellij
 
 # intellij
 .idea
