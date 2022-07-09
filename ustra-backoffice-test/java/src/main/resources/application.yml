@@ -43,7 +43,7 @@ ustra:
         enabled: true
         access-key: 
         secret-key: 
-        bucket-name: s3uploadtype1
+        bucket-name: s3-file-tutorial
         region-name: ap-northeast-2
   mvc:
     view:

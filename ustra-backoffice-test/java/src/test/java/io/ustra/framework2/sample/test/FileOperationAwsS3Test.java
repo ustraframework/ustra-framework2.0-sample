@@ -18,18 +18,14 @@ import io.ustra.framework2.sample.AwsS3SampleApplication;
 
 @EnableAutoConfiguration
 @SpringBootTest(classes = AwsS3SampleApplication.class)
-public class FileOperationTest extends UstraSpringMockMvcTest {
+public class FileOperationAwsS3Test extends UstraSpringMockMvcTest {
 
 	private String uploadedFileId = null;
 
 	private static final String UPLOAD_TARGET_FILE1 = "/upload/source/test_dog.jpg";
 	private static final String UPLOAD_TARGET_FILE2 = "/upload/source/test_cat.jpg";
 
-	private static final String FILE_GROUP_ID_S3 = "test-s3-upload"; // S3 upload (/upload/test/s3)
-	private static final String FILE_GROUP_ID_LOCAL = "test-local-upload"; // local upload (upload/test/local)
-
-	private static final String CONVERT_URI_S3 = "/api/test/convert";
-	private static final String CONVERT_URI_LOCAL = "/api/test/convert/local";
+	private static final String FILE_GROUP_ID_S3 = "test-s3-upload"; // path : /upload/test/s3
 
 	@Autowired private FileOperationManager fileOperationManager;
 
@@ -83,7 +79,7 @@ public class FileOperationTest extends UstraSpringMockMvcTest {
 	@Test
 	public void downloadFile() throws Exception {
 
-		this.mockMvc.perform(MockMvcRequestBuilders.get(CONVERT_URI_LOCAL))
+		this.mockMvc.perform(MockMvcRequestBuilders.get("/api/test/convert/s3"))
 		.andExpect(MockMvcResultMatchers.status().isOk());
 
 	}

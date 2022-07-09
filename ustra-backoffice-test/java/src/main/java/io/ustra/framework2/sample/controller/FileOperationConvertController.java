@@ -21,11 +21,11 @@ public class FileOperationConvertController {
 	private String fileId = "";	// 업로드 된 파일 아이디 작성
 
 	// Resource From AWS
-	@RequestMapping("/api/test/convert")
+	@RequestMapping("/api/test/convert/s3")
 	public ResponseEntity<?> fileDownload(HttpServletRequest request, HttpServletResponse response) {
 
-		// one file download
 		return fileOperationManager.convert(
+				// 파일이 하나일 경우 convertTestFile 라는 파일명으로 다운로드 된다.
 				WebResourceAttachFileConverter.builder("test-s3-upload", "convertTestFile", true, request, response)
 				.metaDataId(FileConvertInput.FileMetaId.builder().fileId(fileId).build())
 				.build());
@@ -37,7 +37,6 @@ public class FileOperationConvertController {
 	@RequestMapping("/api/test/convert/local")
 	public ResponseEntity<?> fileDownloadForLocalFile(HttpServletRequest request, HttpServletResponse response) {
 
-		// multi file download (zip)
 		return fileOperationManager.convert(
 				WebResourceAttachFileConverter.builder("test-local-upload","convertLocalFileTest", true, request, response)
 				.resources(Arrays.asList(
