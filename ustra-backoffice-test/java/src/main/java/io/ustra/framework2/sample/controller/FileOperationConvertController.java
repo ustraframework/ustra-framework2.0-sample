@@ -25,8 +25,8 @@ public class FileOperationConvertController {
 	public ResponseEntity<?> fileDownload(HttpServletRequest request, HttpServletResponse response) {
 
 		return fileOperationManager.convert(
-				// 파일이 하나일 경우 convertTestFile 라는 파일명으로 다운로드 된다.
-				WebResourceAttachFileConverter.builder("test-s3-upload", "convertTestFile", true, request, response)
+				// 파일이 하나일 경우 convertS3FileTest 라는 파일명으로 다운로드 된다.
+				WebResourceAttachFileConverter.builder("test-s3-upload", "convertS3FileTest", true, request, response)
 				.metaDataId(FileConvertInput.FileMetaId.builder().fileId(fileId).build())
 				.build());
 	}
