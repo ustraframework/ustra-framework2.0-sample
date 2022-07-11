@@ -8,9 +8,13 @@ import org.springframework.core.annotation.Order;
 import com.gsitm.ustra.java.data.file.config.FileOperationConfigurer;
 import com.gsitm.ustra.java.data.file.policy.FileGroupPolicyStore;
 import com.gsitm.ustra.java.data.file.processor.AbstractFileOperationProcessor;
+import com.gsitm.ustra.java.data.file.processor.extractor.ResourceInfoExtractorResolver;
+import com.gsitm.ustra.java.data.file.processor.storage.FileMetaDataStorage;
 import com.gsitm.ustra.java.data.file.processor.storage.FileResourceStorage;
 import com.gsitm.ustra.java.data.file.processor.storage.LocalFileResourceStorage;
+import com.gsitm.ustra.java.management.data.file.FileMetaDataStorageService;
 import com.gsitm.ustra.java.management.data.file.UstraManagementFileOperationProcessor;
+import com.gsitm.ustra.java.mvc.data.file.WebResourceInfoExtractorResolver;
 
 @Configuration
 public class LocalFileTestConfiguration {
@@ -24,6 +28,21 @@ public class LocalFileTestConfiguration {
 //			@Override
 //			public FileResourceStorage fileResourceStorage() {
 //				return new XXXFileResourceStorage();
+//			}
+//
+//			/**
+//			 * multipartfile
+//			 */
+//			@Override
+//			public FileMetaDataStorage fileMetaDataStorage() {
+//				return new FileMetaDataStorageService();
+//			}
+//
+//			/**
+//			 * multipartfile
+//			 */
+//			 public ResourceInfoExtractorResolver resourceInfoExtractorResolver() {
+//				return new WebResourceInfoExtractorResolver() {};
 //			}
 //
 //		};
