@@ -1,0 +1,6 @@
+server:
+  host: 0.0.0.0
+  port: 10002
+  apiServerBaseUrl: http://localhost:10002
+nuxt:
+  module: { useProxy: { '/api': { target: 'http://localhost:10001' } } }

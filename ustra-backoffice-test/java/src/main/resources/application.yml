@@ -1,0 +1,75 @@
+
+debug: true
+
+server:
+  port: 10001
+
+spring:
+  profiles:
+    active: local
+
+
+mybatis:
+  mapperLocations: classpath:/mapper/**/*.xml
+  configuration:
+    jdbc-type-for-null: "NULL"
+   
+ 
+ustra:
+  core:
+    process-info:
+      default-system-code: BO
+    properties:      encryption:        enabled: true
+        key: a054qgm5ki90x248
+  data:
+    procedure-manager:
+      enabled: true
+    datasource:
+      default-datasource-name: rds1
+      datasources:
+        rds1:
+          # url: jdbc:log4jdbc:h2:file:~/test2;DB_CLOSE_ON_EXIT=FALSE;AUTO_RECONNECT=TRUE
+          url: jdbc:log4jdbc:sqlserver://framework-sqlserver.c0uiyan5ae24.ap-northeast-2.rds.amazonaws.com:1433;databaseName=USTRA_FW_SPL
+          driver-class-name: net.sf.log4jdbc.sql.jdbcapi.DriverSpy
+          username: ENC(FU4O8ZERHw5YtXQTF5NPolmBuV3q231Ys//jNneyN2EfwLNT0RnlqQ==)
+          password: ENC(QVezyfgonhJprL0mPoLbjMl1Hp83S3y4)
+          properties:
+           max-lifetime: 300
+    file:
+      enabled: true
+      include-default: true
+      crypto:        enabled: true
+      aws-s3:
+        enabled: true
+        access-key: 
+        secret-key: 
+        bucket-name: s3-file-tutorial
+        region-name: ap-northeast-2
+  mvc:
+    view:
+      api-prefix: api
+      client-crypto-key: MTM0eHJhM2Z2aTM5ZTgzNQ==
+      type: STATIC_THYEMELEAF
+    rest:
+      exclude-wrapping-url-patterns: /v2/api-docs,/swagger-resources/**,/swagger-ui.html,/webjars/**
+    wrapper:
+      exclude-request-url-patterns: /v2/api-docs
+      exclude-response-url-patterns: /v2/api-docs
+  management:
+    bo:
+      app:
+        use-auth-approval: true
+        use-user-approval: true
+        password-change-days: 0
+        maximum-auth-group-depth: 5
+      authentication:
+        allow-anoymous-authentication: true
+        system-name: management-bo
+        system-key: BO
+        token-key: X-BO-TOKEN
+        refresh-token-key: X-BO-REF-TOKEN
+        secret-key: nlle0np280dayp8z
+        enable-refresh-token: true
+        refresh-valid-seconds: 6000
+    
+
