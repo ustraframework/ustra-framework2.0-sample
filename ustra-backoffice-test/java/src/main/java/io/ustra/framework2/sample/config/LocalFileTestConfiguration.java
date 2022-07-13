@@ -30,16 +30,9 @@ public class LocalFileTestConfiguration {
 //				return new XXXFileResourceStorage();
 //			}
 //
-//			/**
-//			 * multipartfile
-//			 */
-//			@Override
-//			public FileMetaDataStorage fileMetaDataStorage() {
-//				return new FileMetaDataStorageService();
-//			}
 //
 //			/**
-//			 * multipartfile
+//			 * Web Upload
 //			 */
 //			 public ResourceInfoExtractorResolver resourceInfoExtractorResolver() {
 //				return new WebResourceInfoExtractorResolver() {};
