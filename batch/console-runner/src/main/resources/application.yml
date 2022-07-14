@@ -1,15 +1,6 @@
 ustra:
   data:
     datasource:
-      default-datasource-name: src
-      datasources:
-        src:
-          url: jdbc:h2:file:~/h2/src
-          driver-class-name: org.h2.Driver
-          username: sa
-          password:
-        dest:
-          url: jdbc:h2:file:~/h2/dest
-          driver-class-name: org.h2.Driver
-          username: sa
-          password:
+      enabled: false
+    file:
+      enabled: false

@@ -32,62 +32,9 @@ public class SimpleTaskTest extends UstraSpringTest {
     @Autowired
     private SimpleTask simpleTask;
 
-    @Autowired
-    @Qualifier("src")
-    private DataSource srcDataSource;
-
-    @Autowired
-    @Qualifier("dest")
-    private DataSource destDataSource;
-
-    private List<Integer> data = new ArrayList<>();
-
-    @BeforeEach
-    public void beforeEach() throws SQLException {
-        initData();
-        createSourceDatabase();
-        createTargetDatabase();
-    }
-
     @Test
     public void testExecute() throws SQLException {
         simpleTask.execute();
-        ResultSet rs = destDataSource.getConnection().createStatement().executeQuery("SELECT COUNT(1) FROM SIMPLE_DATA");
-        long count = rs.next() ? rs.getLong(1) : 0;
-        assertEquals(10, count);
-    }
-
-    private void initData() {
-        final Random random = new Random();
-        random.ints(10).forEach(data::add);
-    }
-
-    private void createTargetDatabase() throws SQLException {
-        final Connection conn = destDataSource.getConnection();
-        conn.setAutoCommit(true);
-
-        final Statement stmt = conn.createStatement();
-        stmt.execute("CREATE TABLE SIMPLE_DATA (TS INTEGER NOT NULL)");
-    }
-
-    private void createSourceDatabase() throws SQLException {
-        final Connection conn = srcDataSource.getConnection();
-        conn.setAutoCommit(true);
-
-        // create table
-        final Statement stmt = conn.createStatement();
-        stmt.execute("CREATE TABLE SIMPLE_DATA (TS INTEGER NOT NULL)");
-
-        // insert data
-        final PreparedStatement pstmt = conn.prepareStatement("INSERT INTO SIMPLE_DATA (TS) VALUES (?)");
-        data.stream().forEach(each -> {
-            try {
-                pstmt.setInt(1, each);
-                pstmt.execute();
-            } catch (SQLException e) {
-                throw new RuntimeException(e);
-            }
-        });
     }
 
     @AfterEach
