@@ -1,11 +1,11 @@
-debug: true
+debug: false
 
 server:
   port: 9602
 
 spring:
   profiles:
-    active:
+    active: local
 
 ustra:
   core:
