@@ -1,23 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <configuration>
 
-	<springProfile name="local">
+	<appender name="CONSOLE" class="ch.qos.logback.core.ConsoleAppender">
+		<layout class="ch.qos.logback.classic.PatternLayout">
+			<Pattern>
+				%d{HH:mm:ss.SSS} [%X{username:-SYSTEM}] [%t] %-5level %logger{36} - %msg%n
+			</Pattern>
+		</layout>
+	</appender>
 
-		<appender name="CONSOLE" class="ch.qos.logback.core.ConsoleAppender">
-			<layout class="ch.qos.logback.classic.PatternLayout">
-				<Pattern>
-					%d{HH:mm:ss.SSS} [%X{username:-SYSTEM}] [%t] %-5level %logger{36} - %msg%n
-				</Pattern>
-			</layout>
-		</appender>
+	<root level="WARN">
+		<appender-ref ref="CONSOLE"/>
+	</root>
 
-		<root level="WARN">
-			<appender-ref ref="CONSOLE"/>
-		</root>
-
-		<logger name="com.gsitm.ustra.tutorial" level="DEBUG" additivity="false">
-			<appender-ref ref="CONSOLE"/>
-		</logger>
-	</springProfile>
+	<logger name="com.gsitm.ustra.tutorial" level="INFO" additivity="false">
+		<appender-ref ref="CONSOLE"/>
+	</logger>
 
 </configuration>
