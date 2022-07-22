@@ -18,9 +18,9 @@ repositories {
 }
 
 ext {
-    set('springCloudVersion', "Hoxton.SR3")
+    set('springCloudVersion', "Hoxton.SR10")
     ext['log4j2.version'] = '2.17.1'
-    set('ustraVersion', '2.0.51.RELEASE')
+    set('ustraVersion', '2.1.0.RELEASE')
 }
 
 task initSourceFolders {
