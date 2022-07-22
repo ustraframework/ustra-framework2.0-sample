@@ -31,7 +31,7 @@ group = 'com.gsitm.ustra.java'
 version = '0.0.1-SNAPSHOT'
 
 ext {
-	ustraVersion = '2.0.52.11-SNAPSHOT'
+	ustraVersion = '2.1.0.RELEASE'
     set('springCloudVersion', "Hoxton.SR10")
     set('log4j2.version', '2.17.1')
 }
