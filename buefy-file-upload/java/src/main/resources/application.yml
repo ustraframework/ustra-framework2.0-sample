@@ -1,0 +1,65 @@
+
+debug: true
+
+server:
+  port: 10001
+
+spring:
+  profiles:
+    active: local
+  h2:
+    console:
+      enabled: true
+      settings:        web-allow-others: true
+  servlet:    multipart:      max-file-size: 100MB
+      max-request-size: 100MB
+      
+mybatis:
+  mapperLocations: classpath:/mapper/**/*.xml
+  configuration:
+    jdbc-type-for-null: "NULL"
+   
+ 
+ustra:
+  core:
+    process-info:
+      default-system-code: BO
+    properties:      encryption:        enabled: true
+        key: a054qgm5ki90x248
+  data:
+    procedure-manager:
+      enabled: true
+    datasource:
+      default-datasource-name: rds1
+      datasources:
+        rds1:
+          url: jdbc:h2:mem:userdb;DB_CLOSE_DELAY=-1
+          driver-class-name: org.h2.Driver
+          username: sa
+          password: 
+          sql-script-encoding: utf-8           
+    file:
+      enabled: true
+      crypto:        enabled: true
+      policies:        DEFAULT:
+          file-grp-nm: 기본 파일업로드 그룹
+          sv-path: /upload
+          max-sz: 0
+          exten-lmt: "image/*"
+          dir-struct-type: root-directory
+          file-nm-sv-meth-type: random-exten
+          file-crypto-type: none
+          use-yn: true
+  mvc:
+    view:
+      api-prefix: api
+      client-crypto-key: MTM0eHJhM2Z2aTM5ZTgzNQ==
+      type: front-ssr
+    rest:
+      exclude-wrapping-url-patterns: /v2/api-docs,/swagger-resources/**,/swagger-ui.html,/webjars/**,/h2-console/**
+    wrapper:
+      exclude-request-url-patterns: /v2/api-docs,/h2-console/**,/api/file
+      exclude-response-url-patterns: /v2/api-docs,/h2-console/**,/api/file
+  
+    
+
