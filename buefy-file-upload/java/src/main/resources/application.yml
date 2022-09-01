@@ -19,16 +19,8 @@ mybatis:
   configuration:
     jdbc-type-for-null: "NULL"
    
- 
 ustra:
-  core:
-    process-info:
-      default-system-code: BO
-    properties:      encryption:        enabled: true
-        key: a054qgm5ki90x248
   data:
-    procedure-manager:
-      enabled: true
     datasource:
       default-datasource-name: rds1
       datasources:
@@ -51,10 +43,6 @@ ustra:
           file-crypto-type: none
           use-yn: true
   mvc:
-    view:
-      api-prefix: api
-      client-crypto-key: MTM0eHJhM2Z2aTM5ZTgzNQ==
-      type: front-ssr
     rest:
       exclude-wrapping-url-patterns: /v2/api-docs,/swagger-resources/**,/swagger-ui.html,/webjars/**,/h2-console/**
     wrapper:

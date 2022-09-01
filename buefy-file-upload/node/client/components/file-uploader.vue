@@ -110,7 +110,7 @@ export default class extends UstraComponent {
     fileService.downloadFile(this.fileGroupId, this.syncFileId, row.no, row.name)
   }
 
-  @Watch('fileId')
+  @Watch('fileId', { immediate: true })
   async onfileIdChanged(v) {
     this.files = []
     await this.$nextTick()

@@ -101,10 +101,36 @@
 
 
 		<dependency>
-			<groupId>com.gsitm.ustra.java.starter</groupId>
-			<artifactId>ustra-starter-vue-bo</artifactId>
+			<groupId>com.gsitm.ustra.java</groupId>
+			<artifactId>ustra-autoconfigure</artifactId>
 			<version>${ustra.version}</version>
 		</dependency>
+
+		<dependency>
+			<groupId>com.gsitm.ustra.java</groupId>
+			<artifactId>ustra-data-mybatis</artifactId>
+			<version>${ustra.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>com.gsitm.ustra.java</groupId>
+			<artifactId>ustra-mvc-view</artifactId>
+			<version>${ustra.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>com.gsitm.ustra.java</groupId>
+			<artifactId>ustra-mvc-test</artifactId>
+			<version>${ustra.version}</version>
+			<scope>test</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>com.h2database</groupId>
+			<artifactId>h2</artifactId>
+			<scope>runtime</scope>
+		</dependency>
+
 		<dependency>
 			<groupId>io.springfox</groupId>
 			<artifactId>springfox-swagger2</artifactId>

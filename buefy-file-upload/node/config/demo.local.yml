@@ -3,4 +3,4 @@ server:
   port: 9001
   apiServerBaseUrl: http://localhost:9001
 nuxt:
-  module: { useProxy: { '/api': { target: 'http://localhost:10001' } } }
+  module: { useProxy: { '/api/': { target: 'http://localhost:10001' } } }
