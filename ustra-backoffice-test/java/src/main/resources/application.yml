@@ -45,6 +45,12 @@ ustra:
         secret-key: 
         bucket-name: s3-file-tutorial
         region-name: ap-northeast-2
+      aws-s3-multi:
+        enabled: true
+        access-key: 
+        secret-key: 
+        bucket-name: s3-bucket-multi
+        region-name: ap-northeast-2        
   mvc:
     view:
       api-prefix: api

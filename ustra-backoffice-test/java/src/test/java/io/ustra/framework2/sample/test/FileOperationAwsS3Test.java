@@ -25,7 +25,8 @@ public class FileOperationAwsS3Test extends UstraSpringMockMvcTest {
 	private static final String UPLOAD_TARGET_FILE1 = "/upload/source/test_dog.jpg";
 	private static final String UPLOAD_TARGET_FILE2 = "/upload/source/test_cat.jpg";
 
-	private static final String FILE_GROUP_ID_S3 = "test-s3-upload"; // path : /upload/test/s3
+//	private static final String FILE_GROUP_ID_S3 = "test-s3-upload"; // path : /upload/test/s3
+	private static final String FILE_GROUP_ID_S3 = "test-multi-s3-upload"; // path : /multi
 
 	@Autowired private FileOperationManager fileOperationManager;
 
