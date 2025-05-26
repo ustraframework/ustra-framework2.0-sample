@@ -6,15 +6,15 @@
  */
 buildscript {
     ext {
-        springBootVersion = '2.2.5.RELEASE'
-        set('springCloudVersion', "Hoxton.SR3")
+        springBootVersion = '3.2.10'
+        set('springCloudVersion', '2023.0.3')
         set('log4j2.version', '2.17.1')
     }
 
     repositories {
         mavenCentral()
         maven { url "https://plugins.gradle.org/m2/" }
-        maven { url "https://repo.gsitm.com/repository/m2-public/" }
+        maven { url "https://repo.ustraframework.kro.kr/repository/maven-public/" }
     }
 
     dependencies {
@@ -37,8 +37,8 @@ group = 'com.gsitm.ustra.java'
 version = '0.0.1-SNAPSHOT'
 
 ext {
-    ustraVersion = '2.0.51.127-SNAPSHOT'
-    set('springCloudVersion', "Hoxton.SR3")
+    ustraVersion = '3.4.1'
+    set('springCloudVersion', '2023.0.3')
     set('log4j2.version', '2.17.1')
 }
 
@@ -47,8 +47,8 @@ apply plugin: 'io.spring.dependency-management'
 apply plugin: 'java'
 apply plugin: 'eclipse'
 
-sourceCompatibility = 1.8
-targetCompatibility = 1.8
+sourceCompatibility = 17
+targetCompatibility = 17
 
 eclipse {
     classpath { downloadSources=true }
@@ -76,24 +76,23 @@ task initSourceFolders {
 
 repositories {
     mavenCentral()
-    maven { url "https://repo.gsitm.com/repository/public/" }
-    maven { url "https://repo.gsitm.com/repository/m2-public/" }
+    maven { url "https://repo.ustraframework.kro.kr/repository/maven-public/" }
 }
 
 dependencies {
     implementation 'org.apache.logging.log4j:log4j-to-slf4j:2.17.1'
     implementation 'org.apache.logging.log4j:log4j-api:2.17.1'
-    implementation 'ch.qos.logback:logback-core:1.2.9'
-    implementation 'ch.qos.logback:logback-classic:1.2.9'
+    implementation 'ch.qos.logback:logback-core:1.4.14'
+    implementation 'ch.qos.logback:logback-classic:1.4.14'
 
     implementation 'org.springframework.boot:spring-boot-starter'
-    testCompile('org.springframework.boot:spring-boot-starter-test') {
+    implementation  'org.springframework.boot:spring-boot-starter-aop'
+    testImplementation ('org.springframework.boot:spring-boot-starter-test') {
         exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
     }
     testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
 
     compileOnly 'org.projectlombok:lombok'
-    compile 'org.springframework.boot:spring-boot-starter-aop'
 
     annotationProcessor 'org.springframework.boot:spring-boot-configuration-processor'
     annotationProcessor 'org.projectlombok:lombok'
@@ -102,10 +101,9 @@ dependencies {
     testCompileOnly 'org.projectlombok:lombok'
 
     runtimeOnly 'com.h2database:h2'
-}
+    implementation 'org.postgresql:postgresql:42.7.3'
 
-dependencies {
-    compile "com.gsitm.ustra.java.starter:ustra-starter-vue-bo:${ustraVersion}"
-    compile 'io.springfox:springfox-swagger2:2.9.2'
-    compile 'io.springfox:springfox-swagger-ui:2.9.2'
+    implementation "com.gsitm.ustra.java.starter:ustra-starter-vue-bo:${ustraVersion}"
+    implementation 'io.springfox:springfox-swagger2:2.9.2'
+    implementation 'io.springfox:springfox-swagger-ui:2.9.2'
 }

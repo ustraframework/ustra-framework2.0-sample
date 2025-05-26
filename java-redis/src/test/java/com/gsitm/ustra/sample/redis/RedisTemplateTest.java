@@ -1,7 +1,6 @@
 package com.gsitm.ustra.sample.redis;
 
 import com.gsitm.ustra.java.test.UstraSpringTest;
-import org.junit.Before;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,7 +20,7 @@ public class RedisTemplateTest extends UstraSpringTest {
     @Autowired
     private RedisTemplate<String, String> redisTemplate;
 
-    @Before
+    @BeforeEach
     public void deleteAll() {
         // 모든 key-value 삭제
         redisTemplate.delete(redisTemplate.keys("*"));

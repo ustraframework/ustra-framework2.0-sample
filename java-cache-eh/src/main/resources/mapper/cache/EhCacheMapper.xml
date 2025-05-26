@@ -8,7 +8,7 @@
         SELECT GRP_CD
             ,DTL_CD
             ,CD_NM
-        FROM USTRA_SAMPLE_CMM_CD
+        FROM USTRA_CMM_CD
         WHERE 1=1
         <if test="useYn != null">
             AND USE_YN = #{useYn}

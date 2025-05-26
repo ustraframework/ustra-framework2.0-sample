@@ -1,7 +1,7 @@
 package com.gsitm.ustra.java.swagger.api.example;
 
 import com.gsitm.ustra.java.management.models.base.UstraManagementBaseModel;
-import io.swagger.annotations.ApiModelProperty;
+import io.swagger.v3.oas.annotations.media.Schema;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
@@ -15,18 +15,18 @@ import lombok.experimental.SuperBuilder;
 @AllArgsConstructor
 public class ExampleModel extends UstraManagementBaseModel {
 
-    @ApiModelProperty("그룹 코드")
+    @Schema(description = "그룹 코드")
     private String grpCd;
 
-    @ApiModelProperty("상세 코드")
+    @Schema(description = "상세 코드")
     private String dtlCd;
 
-    @ApiModelProperty("코드명")
+    @Schema(description = "코드명")
     private String cdNm;
 
     @Data
     public static class Criteria {
-        @ApiModelProperty("사용여부")
+        @Schema(description = "사용 여부")
         private String useYn;
     }
 }
